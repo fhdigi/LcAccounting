@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="LcAccountingApplication.Views.PopupControls.EnterBillPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Uid="EnterBill_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock x:Uid="EnterBill_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <ComboBox Margin="8,0" VerticalAlignment="Center"/>
+            <Button Margin="8,0" x:Uid="EnterBill_AddVendor"/>
+        </StackPanel>
+        <Grid Grid.Row="2" Margin="0,8" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Margin="8,0" x:Uid="EnterBill_Amount" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Margin="8,0" x:Uid="EnterBill_InvoiceID" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="4" Margin="8,0" x:Uid="EnterBill_DateRecieved" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="6" Margin="8,0" x:Uid="EnterBill_DateDue" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="8" Margin="8,0" x:Uid="EnterBill_AnticipatedPayDate" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+
+            <TextBox Grid.Row="1" Margin="8,0" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="3" Margin="8,0" VerticalAlignment="Center"/>
+            <DatePicker Grid.Row="5" Margin="8,0" VerticalAlignment="Center"/>
+            <DatePicker Grid.Row="7" Margin="8,0" VerticalAlignment="Center"/>
+            <DatePicker Grid.Row="9" Margin="8,0" VerticalAlignment="Center"/>
+        </Grid>
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+            <TextBlock x:Uid="EnterBill_ChartOfAccount" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <ComboBox Margin="8,0" VerticalAlignment="Center"/>
+            <Button Margin="8,0" x:Uid="EnterBill_AddAccount"/>
+        </StackPanel>
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
+            <Button Margin="8,0" x:Uid="EnterBill_SaveAndNew" VerticalAlignment="Center"/>
+            <Button Margin="8,0" x:Uid="EnterBill_SaveAndClose" VerticalAlignment="Center"/>
+            <Button Margin="8,0" x:Uid="EnterBill_Cancel" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Page>

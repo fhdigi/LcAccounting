@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="LcAccountingApplication.Views.PopupControls.EnterBillPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock x:Uid="PayBills_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock x:Uid="PayBills_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+            <ComboBox Margin="8,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
+        <ScrollViewer Grid.Row="3" HorizontalAlignment="Center" Height="256">
+            <ListView>
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="128"/>
+                            <ColumnDefinition Width="128"/>
+                            <ColumnDefinition Width="128"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Date Recorded, Date Due, and Amount-->
+                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateRecorded"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateDue"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_Amount"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="128"/>
+                                <ColumnDefinition Width="128"/>
+                                <ColumnDefinition Width="128"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Date Recorded, Date Due, and Amount-->
+                            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </ScrollViewer>
+
+        <Grid Grid.Row="4" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+                <ColumnDefinition Width="128"/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock x:Uid="PayBills_AmountToPay" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
+            <TextBlock x:Uid="PayBills_CheckID" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
+            <TextBlock x:Uid="PayBills_Date" Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
+            <TextBlock x:Uid="PayBills_Memo" Grid.Column="0" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
+
+            <TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3"/>
+
+            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">
+            <Button x:Uid="PayBills_Pay" Margin="8"/>
+            <Button x:Uid="PayBills_Cancel" Margin="8"/>
+        </StackPanel>
+    </Grid>
+</Page>

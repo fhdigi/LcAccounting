@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="LcAccountingApplication.Views.PopupControls.ChartOfAccountListingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" x:Uid="ChartOfAccountListing_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" Height="256">
+            <ListView HorizontalAlignment="Center">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="192"/>
+                            <ColumnDefinition Width="64"/>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Date Recorded, Date Due, and Amount-->
+                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListingPage_Number"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListingPage_AccountName"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListingPage_AccountType"/>
+                        <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListingPage_BudgetItem"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="176"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <!--Date Recorded, Date Due, and Amount-->
+                            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Uid="ChartOfAccountListingPage_AddNewAccount" Margin="8"/>
+            <Button x:Uid="ChartOfAccountListingPage_EditAccount" Margin="8"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+            <Button x:Uid="ChartOfAccountListingPage_DeleteAccount" Margin="8"/>
+            <Button x:Uid="ChartOfAccountListingPage_CloseAccount" Margin="8"/>
+        </StackPanel>
+    </Grid>
+</Page>
