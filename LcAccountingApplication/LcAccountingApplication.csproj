@@ -146,8 +146,14 @@
     <Compile Include="Views\PayablesPage.xaml.cs">
       <DependentUpon>PayablesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopupControls\AddProjectPage.xaml.cs">
+      <DependentUpon>AddProjectPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopupControls\ChartOfAccountListingPage.xaml.cs">
       <DependentUpon>ChartOfAccountListingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupControls\CreateChartOfAccountPage.xaml.cs">
+      <DependentUpon>CreateChartOfAccountPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopupControls\PayBillPage.xaml.cs">
       <DependentUpon>PayBillPage.xaml</DependentUpon>
@@ -209,7 +215,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PopupControls\AddProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopupControls\ChartOfAccountListingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopupControls\CreateChartOfAccountPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

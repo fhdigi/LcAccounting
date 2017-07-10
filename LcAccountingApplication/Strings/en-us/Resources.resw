@@ -135,22 +135,22 @@
   <data name="Company_Title.Text" xml:space="preserve">
     <value>Company</value>
   </data>
-  <data name="Shell_Home" xml:space="preserve">
+  <data name="Shell_Home.Text" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="Shell_Banking" xml:space="preserve">
+  <data name="Shell_Banking.Text" xml:space="preserve">
     <value>Banking</value>
   </data>
-  <data name="Shell_Receivables" xml:space="preserve">
+  <data name="Shell_Receivables.Text" xml:space="preserve">
     <value>Receivables</value>
   </data>
-  <data name="Shell_Payables" xml:space="preserve">
+  <data name="Shell_Payables.Text" xml:space="preserve">
     <value>Payables</value>
   </data>
-  <data name="Shell_Employees" xml:space="preserve">
+  <data name="Shell_Employees.Text" xml:space="preserve">
     <value>Employees</value>
   </data>
-  <data name="Shell_Company" xml:space="preserve">
+  <data name="Shell_Company.Text" xml:space="preserve">
     <value>Company</value>
   </data>
   <data name="ChartOfAccountListingPage_AccountName.Text" xml:space="preserve">
@@ -257,5 +257,56 @@
   </data>
   <data name="PayBills_Vendor.Text" xml:space="preserve">
     <value>Vendor</value>
+  </data>
+  <data name="AddProject_AddNewCustomer.Text" xml:space="preserve">
+    <value>Add New Customer</value>
+  </data>
+  <data name="AddProject_ContactNumber" xml:space="preserve">
+    <value>Contract #</value>
+  </data>
+  <data name="AddProject_DateDue" xml:space="preserve">
+    <value>Date Due</value>
+  </data>
+  <data name="AddProject_DateReceived" xml:space="preserve">
+    <value>Date Received</value>
+  </data>
+  <data name="AddProject_FreightCode" xml:space="preserve">
+    <value>Freight Code</value>
+  </data>
+  <data name="AddProject_ProjectName.Text" xml:space="preserve">
+    <value>Project Name</value>
+  </data>
+  <data name="AddProject_PurchaseOrderID" xml:space="preserve">
+    <value>Purchase Order #</value>
+  </data>
+  <data name="AddProject_ShippedVia" xml:space="preserve">
+    <value>Shipped Via</value>
+  </data>
+  <data name="AddProject_Title.Text" xml:space="preserve">
+    <value>Add Project</value>
+  </data>
+  <data name="CreateChartOfAccount_AccountName.Text" xml:space="preserve">
+    <value>Account Number</value>
+  </data>
+  <data name="CreateChartOfAccount_AccountNumber.Text" xml:space="preserve">
+    <value>Account Name</value>
+  </data>
+  <data name="CreateChartOfAccount_AccountType.Text" xml:space="preserve">
+    <value>Account Type</value>
+  </data>
+  <data name="CreateChartOfAccount_BudgetItemHumber.Text" xml:space="preserve">
+    <value>Budget Item Number</value>
+  </data>
+  <data name="CreateChartOfAccount_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CreateChartOfAccount_SaveAndClose.Text" xml:space="preserve">
+    <value>Save and Close</value>
+  </data>
+  <data name="CreateChartOfAccount_SaveAndNew.Text" xml:space="preserve">
+    <value>Save and New</value>
+  </data>
+  <data name="CreateChartOfAccount_Title.Text" xml:space="preserve">
+    <value>Create Chart of Account</value>
   </data>
 </root>
