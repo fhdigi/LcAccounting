@@ -21,8 +21,8 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "Terms")]
         public int Terms { get; set; }
 
-        [JsonProperty(PropertyName = "Adress")]
-        public string Adress { get; set; }
+        [JsonProperty(PropertyName = "Address")]
+        public string Address { get; set; }
 
         [JsonProperty(PropertyName = "City")]
         public string City { get; set; }
@@ -73,9 +73,5 @@ namespace LcAccountingApplication.Models
 
 
         }
-            
-
-
-
     }
 }
