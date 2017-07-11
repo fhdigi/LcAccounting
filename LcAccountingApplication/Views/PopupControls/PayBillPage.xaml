@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="LcAccountingApplication.Views.PopupControls.EnterBillPage"
+    x:Class="LcAccountingApplication.Views.PopupControls.PayBillPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LcAccountingApplication.Views.PopupControls"
