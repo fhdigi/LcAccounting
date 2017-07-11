@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 
-namespace LcAccountingApplication.Models
+namespace LcAccountingApplication.Models.PopupControls
 {
     public class ChartOfAccount
     {

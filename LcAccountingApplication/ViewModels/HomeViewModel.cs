@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using LcAccountingApplication.Helpers;
-using LcAccountingApplication.Models;
+using LcAccountingApplication.Models.PopupControls;
 
 namespace LcAccountingApplication.ViewModels
 {
@@ -9,12 +9,7 @@ namespace LcAccountingApplication.ViewModels
     {
         public HomeViewModel()
         {
-            Task.Run(GetAccountListing);
-        }
 
-        public async Task GetAccountListing()
-        {
-            var listing = await ChartOfAccount.ChartOfAccountListing();
         }
     }
 }

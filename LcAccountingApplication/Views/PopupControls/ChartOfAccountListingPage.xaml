@@ -5,6 +5,7 @@
     xmlns:local="using:LcAccountingApplication.Views.PopupControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:LcAccountingApplication.Models.PopupControls"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -20,7 +21,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" x:Uid="ChartOfAccountListing_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
         
-        <ListView HorizontalAlignment="Center" Grid.Row="1" Height="256">
+        <ListView HorizontalAlignment="Center" Grid.Row="1" Height="256" ItemsSource="{x:Bind ViewModel.ChartOfAccountListing}">
             <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -38,7 +39,7 @@
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:ChartOfAccount">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="48"/>
@@ -47,11 +48,10 @@
                             <ColumnDefinition Width="48"/>
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
-                        <!--Date Recorded, Date Due, and Amount-->
-                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
-                        <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind AccountNumber}"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind AccountName}"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind Grouping}"/>
+                        <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind Id}"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
