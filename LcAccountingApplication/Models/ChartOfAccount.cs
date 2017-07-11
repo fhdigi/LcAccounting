@@ -22,15 +22,25 @@ namespace LcAccountingApplication.Models
 
         public static async Task InsertChartOfAccount(ChartOfAccount coaItem)
         {
-            // This code inserts a new item into the database. 
             await CoaTable.InsertAsync(coaItem);
         }
 
-        private static async Task<List<ChartOfAccount>> ChartOfAccountListing()
+        public static async Task UpdateChartOfAccount(ChartOfAccount coaItem)
+        {
+            await CoaTable.UpdateAsync(coaItem);
+        }
+
+        public static async Task DeleteChartOfAccount(ChartOfAccount coaItem)
+        {
+            await CoaTable.DeleteAsync(coaItem);
+        }
+
+        public static async Task<List<ChartOfAccount>> ChartOfAccountListing()
         {
             try
             {
-                return await CoaTable.ToListAsync();
+                var listing = await CoaTable.ToListAsync();
+                return listing;
             }
             catch (MobileServiceInvalidOperationException e)
             {
