@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="LcAccountingApplication.Views.PopupControls.RecievePaymentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Grid.Row="0" x:Uid="ReceivePayment_Title" Style="{StaticResource HeaderTextBlockStyle}" VerticalAlignment="Top"/>
+        <StackPanel Width="384" Margin="0,64,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Uid="ReceivePaymentPage_Customer" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" x:Uid="ReceivePaymentPage_DateRecorded" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Uid="ReceivePaymentPage_CheckID" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" x:Uid="ReceivePaymentPage_CheckAmount" Style="{StaticResource BodyTextBlockStyle}"/>
+
+                <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="8"/>
+                <CalendarDatePicker Grid.Row="3" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="8"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Margin="8"/>
+            </Grid>
+            <TextBlock x:Uid="ReceivePayment_OpenInvoices" Style="{StaticResource BodyTextBlockStyle}"/>
+
+            <ListView HorizontalAlignment="Center" Grid.Row="1" Height="256">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="192"/>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="64"/>
+                            <ColumnDefinition Width="48"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ReceivePayment_Project"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ReceivePayment_InvoiceID"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ReceivePayment_InvoiceDate"/>
+                        <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ReceivePayment_Amount"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="192"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
+                            <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Uid="ReceivePayment_FundsDeposited"/>
+                <ComboBox Margin="8"/>
+            </StackPanel>
+            <CheckBox x:Uid="ReceivePayment_PaymentAlreadyEntered" Margin="8"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Uid="RecievePayment_Save" Margin="8"/>
+                <Button x:Uid="RecievePayment_Close" Margin="8"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

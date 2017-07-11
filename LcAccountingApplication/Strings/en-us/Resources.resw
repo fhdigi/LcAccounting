@@ -153,28 +153,28 @@
   <data name="Shell_Company.Text" xml:space="preserve">
     <value>Company</value>
   </data>
-  <data name="ChartOfAccountListingPage_AccountName.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_AccountName.Text" xml:space="preserve">
     <value>Account Name</value>
   </data>
-  <data name="ChartOfAccountListingPage_AccountType.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_AccountType.Text" xml:space="preserve">
     <value>Account Type</value>
   </data>
-  <data name="ChartOfAccountListingPage_AddNewAccount.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_AddNewAccount.Text" xml:space="preserve">
     <value>Add New Account</value>
   </data>
-  <data name="ChartOfAccountListingPage_BudgetItem.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_BudgetItem.Text" xml:space="preserve">
     <value>Budget Item</value>
   </data>
-  <data name="ChartOfAccountListingPage_Close.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_Close.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="ChartOfAccountListingPage_DeleteAccount.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_DeleteAccount.Text" xml:space="preserve">
     <value>Delete Account</value>
   </data>
-  <data name="ChartOfAccountListingPage_EditAccount.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_EditAccount.Text" xml:space="preserve">
     <value>Edit Account</value>
   </data>
-  <data name="ChartOfAccountListingPage_Number.Text" xml:space="preserve">
+  <data name="ChartOfAccountListing_Number.Text" xml:space="preserve">
     <value>Number</value>
   </data>
   <data name="ChartOfAccountListing_Title.Text" xml:space="preserve">
@@ -308,5 +308,209 @@
   </data>
   <data name="CreateChartOfAccount_Title.Text" xml:space="preserve">
     <value>Create Chart of Account</value>
+  </data>
+  <data name="AddProject_Amount.Text" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="AddProject_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="AddProject_Contract.Text" xml:space="preserve">
+    <value>Contract:</value>
+  </data>
+  <data name="AddProject_Description.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="AddProject_Hours.Text" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="AddProject_JobClosed.Content" xml:space="preserve">
+    <value>Job is Closed</value>
+  </data>
+  <data name="AddProject_Other.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="AddProject_Rate.Text" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="AddProject_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AssignCredit_Amount.Text" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="AssignCredit_CheckAmount.Text" xml:space="preserve">
+    <value>Check Amount</value>
+  </data>
+  <data name="AssignCredit_CheckID.Text" xml:space="preserve">
+    <value>Check #</value>
+  </data>
+  <data name="AssignCredit_Close.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="AssignCredit_Customer.Text" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="AssignCredit_DateRecorded.Text" xml:space="preserve">
+    <value>Date Rec.</value>
+  </data>
+  <data name="AssignCredit_FundsDeposited.Text" xml:space="preserve">
+    <value>Account Funds were Deposited</value>
+  </data>
+  <data name="AssignCredit_InvoiceDate.Text" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="AssignCredit_InvoiceID.Text" xml:space="preserve">
+    <value>Invoice #</value>
+  </data>
+  <data name="AssignCredit_PaymentAlreadyEntered.Content" xml:space="preserve">
+    <value>This payment has already been entered into the check ledger</value>
+  </data>
+  <data name="AssignCredit_Project.Text" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="AssignCredit_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="AssignCredit_Title.Text" xml:space="preserve">
+    <value>Assign Credit</value>
+  </data>
+  <data name="AssignCredit_RecievePayment.Text" xml:space="preserve">
+    <value>Recieve Payment</value>
+  </data>
+  <data name="ReceivePayment.Title" xml:space="preserve">
+    <value>Recieve Payment</value>
+  </data>
+  <data name="ReceivePayment_Amount.Text" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="ReceivePayment_CheckAmount.Text" xml:space="preserve">
+    <value>Check Amount</value>
+  </data>
+  <data name="ReceivePayment_CheckID.Text" xml:space="preserve">
+    <value>Check #</value>
+  </data>
+  <data name="ReceivePayment_Close.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ReceivePayment_Customer.Text" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="ReceivePayment_DateRecorded.Text" xml:space="preserve">
+    <value>Date Rec.</value>
+  </data>
+  <data name="ReceivePayment_FundsDeposited.Text" xml:space="preserve">
+    <value>Account Funds were Deposited</value>
+  </data>
+  <data name="ReceivePayment_InvoiceDate.Text" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="ReceivePayment_InvoiceID.Text" xml:space="preserve">
+    <value>Invoice #</value>
+  </data>
+  <data name="ReceivePayment_PaymentAlreadyEntered.Content" xml:space="preserve">
+    <value>This payment has already been entered into the check ledger</value>
+  </data>
+  <data name="ReceivePayment_Project.Text" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="ReceivePayment_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="ReceivePayment_Title.Text" xml:space="preserve">
+    <value>Recieve Payment</value>
+  </data>
+  <data name="CreateInvoice_AnticipatedPayDate.Text" xml:space="preserve">
+    <value>Anticipated Pay Date</value>
+  </data>
+  <data name="CreateInvoice_Description.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CreateInvoice_FixedPriceContract" xml:space="preserve">
+    <value>Fixed Price Contract</value>
+  </data>
+  <data name="CreateInvoice_GrandTotal.Text" xml:space="preserve">
+    <value>Total Invoice Amount</value>
+  </data>
+  <data name="CreateInvoice_HourlyService.Content" xml:space="preserve">
+    <value>Hourly Service</value>
+  </data>
+  <data name="CreateInvoice_Hours.Text" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="CreateInvoice_InvoiceDate.Text" xml:space="preserve">
+    <value>Invoice Date</value>
+  </data>
+  <data name="CreateInvoice_Invoicetype.Text" xml:space="preserve">
+    <value>Invoice Type:</value>
+  </data>
+  <data name="CreateInvoice_JobName.Text" xml:space="preserve">
+    <value>Select Job Name</value>
+  </data>
+  <data name="CreateInvoice_Notes.Text" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="CreateInvoice_Product.Content" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="CreateInvoice_Rate.Text" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="CreateInvoice_Terms.Text" xml:space="preserve">
+    <value>Terms</value>
+  </data>
+  <data name="CreateInvoice_Title.Text" xml:space="preserve">
+    <value>Create Invoice</value>
+  </data>
+  <data name="CreateInvoice_Total.Text" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="VendorLisrt_Title.Text" xml:space="preserve">
+    <value>Vendor List</value>
+  </data>
+  <data name="VendorList_Cancel.Content" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="VendorList_Edit.Content" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="VendorList_SelectVendor.Text" xml:space="preserve">
+    <value>Please Select a Vendor to Edit</value>
+  </data>
+  <data name="Vendor_AccountNumber.Text" xml:space="preserve">
+    <value>AccountID</value>
+  </data>
+  <data name="Vendor_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Vendor_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Vendor_City.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Vendor_CompanyName.Text" xml:space="preserve">
+    <value>Company Name</value>
+  </data>
+  <data name="Vendor_Email.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Vendor_Fax.Text" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="Vendor_PhoneNumber.Text" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Vendor_Save.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Vendor_State.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Vendor_Terms.Text" xml:space="preserve">
+    <value>Terms</value>
+  </data>
+  <data name="Vendor_ZipCode.Text" xml:space="preserve">
+    <value>ZIP Code</value>
   </data>
 </root>

@@ -27,9 +27,23 @@
             <ComboBox Margin="8,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </StackPanel>
         <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-        <ScrollViewer Grid.Row="3" HorizontalAlignment="Center" Height="256">
-            <ListView>
-                <ListView.Header>
+        <ListView Grid.Row="3" Height="256">
+            <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Date Recorded, Date Due, and Amount-->
+                    <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateRecorded"/>
+                    <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateDue"/>
+                    <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_Amount"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="128"/>
@@ -38,34 +52,18 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <!--Date Recorded, Date Due, and Amount-->
-                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateRecorded"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateDue"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_Amount"/>
+                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
                     </Grid>
-                </ListView.Header>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="128"/>
-                                <ColumnDefinition Width="128"/>
-                                <ColumnDefinition Width="128"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <!--Date Recorded, Date Due, and Amount-->
-                            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
-                            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
-                            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsWrapGrid Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-            </ListView>
-        </ScrollViewer>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+        </ListView>
 
         <Grid Grid.Row="4" HorizontalAlignment="Center">
             <Grid.RowDefinitions>

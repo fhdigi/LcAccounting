@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="LcAccountingApplication.Views.PopupControls.AssignCreditPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Grid.Row="0" x:Uid="AssignCredit_Title" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Top"/>
+        <StackPanel Width="384" Margin="0,48,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Uid="AssignCredit_Customer" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" x:Uid="AssignCredit_DateRecorded" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" x:Uid="AssignCredit_CheckID" Style="{StaticResource BodyTextBlockStyle}"/>
+                <TextBlock Grid.Row="2" Grid.Column="2" x:Uid="AssignCredit_CheckAmount" Style="{StaticResource BodyTextBlockStyle}"/>
+
+                <ComboBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="8"/>
+                <CalendarDatePicker Grid.Row="3" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Margin="8"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Margin="8"/>
+            </Grid>
+            <TextBlock x:Uid="AssignCredit_OpenInvoices" Style="{StaticResource BodyTextBlockStyle}"/>
+
+            <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" Height="256">
+                <ListView HorizontalAlignment="Center">
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="192"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="64"/>
+                                <ColumnDefinition Width="48"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="AssignCredit_Project"/>
+                            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="AssignCredit_InvoiceID"/>
+                            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="AssignCredit_InvoiceDate"/>
+                            <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" x:Uid="AssignCredit_Amount"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="192"/>
+                                    <ColumnDefinition Width="48"/>
+                                    <ColumnDefinition Width="64"/>
+                                    <ColumnDefinition Width="48"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
+                                <TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </ScrollViewer>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Uid="AssignCredit_FundsDeposited"/>
+                <ComboBox Margin="8"/>
+            </StackPanel>
+            <CheckBox x:Uid="AssignCredit_PaymentAlreadyEntered" Margin="8"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Uid="AssignCredit_Save" Margin="8"/>
+                <Button x:Uid="AssignCredit_Close" Margin="8"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

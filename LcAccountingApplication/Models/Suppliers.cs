@@ -73,9 +73,5 @@ namespace LcAccountingApplication.Models
 
 
         }
-            
-
-
-
     }
 }
