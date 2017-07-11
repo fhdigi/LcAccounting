@@ -24,6 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="128"/>
@@ -66,6 +67,21 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" x:Uid="AddProject_Hours" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" x:Uid="AddProject_Rate" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Grid.Row="0" Grid.Column="3" x:Uid="AddProject_Other" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" x:Uid="AddProject_Amount" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Uid="AddProject_Contract" Style="{StaticResource BodyTextBlockStyle}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="8"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Margin="8"/>
+            <TextBox Grid.Row="1" Grid.Column="3" Margin="8"/>
+            <TextBox Grid.Row="1" Grid.Column="4" Margin="8"/>
         </Grid>
+        <CheckBox Grid.Row="12" Grid.ColumnSpan="3" x:Uid="AddProject_JobClosed" HorizontalContentAlignment="Left" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="13" Grid.ColumnSpan="2" x:Uid="AddProject_Description" Style="{StaticResource BodyTextBlockStyle}"/>
+        <TextBox Grid.Row="14" Grid.ColumnSpan="3" Height="96" Margin="8" TextWrapping="Wrap"/>
+        <Button Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" x:Uid="AddProject_Cancel"/>
+        <Button Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" x:Uid="AddProject_Save"/>
     </Grid>
 </Page>
