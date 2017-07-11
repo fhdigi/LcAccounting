@@ -1,7 +1,7 @@
 using System;
 
 using LcAccountingApplication.Services;
-
+using Microsoft.WindowsAzure.MobileServices;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 
@@ -12,6 +12,12 @@ namespace LcAccountingApplication
     /// </summary>
     sealed partial class App : Application
     {
+        // This MobileServiceClient has been configured to communicate with the Azure Mobile Service and
+        // Azure Gateway using the application key. You're all set to start working with your Mobile Service!
+        public static MobileServiceClient MobileService = new MobileServiceClient(
+            "https://lccsexpense.azurewebsites.net"
+        );
+
         private Lazy<ActivationService> _activationService;
         private ActivationService ActivationService { get { return _activationService.Value; } }
 
