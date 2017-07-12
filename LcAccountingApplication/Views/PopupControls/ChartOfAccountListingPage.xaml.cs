@@ -26,10 +26,12 @@ namespace LcAccountingApplication.Views.PopupControls
 
         public ChartOfAccountListingPage()
         {
-            ViewModel = new ChartOfAccountViewModel();
-            ViewModel.NavigateToCreateChartOfAccountPageCommand = new RelayCommand(() => { Frame.Navigate(typeof(CreateChartOfAccountPage)); });
-            ViewModel.CloseChartOfAccountPageCommand = new RelayCommand(() => { });
-
+            ViewModel = new ChartOfAccountViewModel()
+            {
+                EditSelectedAccountCommand = new RelayCommand(() => { Frame.Navigate(typeof(ChartOfAccountPage)); }),
+                ClosePageCommand = new RelayCommand(() => { Frame.GoBack(); }),
+                AddNewAccountCommand = new RelayCommand(() => { Frame.Navigate(typeof(ChartOfAccountPage)); })
+            };
             DataContext = ViewModel;
 
             this.InitializeComponent();

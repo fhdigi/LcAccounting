@@ -17,7 +17,7 @@ namespace LcAccountingApplication.Models.PopupControls
         public string AccountName { get; set; }
 
         [JsonProperty(PropertyName = "Grouping")]
-        public string Grouping { get; set; }
+        public AccountTypes Grouping { get; set; }
 
         private static readonly IMobileServiceTable<ChartOfAccount> CoaTable = App.MobileService.GetTable<ChartOfAccount>();
 
@@ -48,5 +48,13 @@ namespace LcAccountingApplication.Models.PopupControls
                 return null;
             }
         }
+    }
+    public enum AccountTypes
+    {
+        Asset,
+        Liability,
+        Equity,
+        Income,
+        Expense
     }
 }

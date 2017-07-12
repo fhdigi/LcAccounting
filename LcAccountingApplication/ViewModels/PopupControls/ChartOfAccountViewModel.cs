@@ -29,19 +29,30 @@ namespace LcAccountingApplication.ViewModels.PopupControls
 
 
         //COMMANDS
-        public ICommand NavigateToCreateChartOfAccountPageCommand;
-        public ICommand CloseChartOfAccountPageCommand;
+        public ICommand EditSelectedAccountCommand;
+        public ICommand ClosePageCommand;
+        public ICommand DeleteSelectedAccountCommand;
+        public ICommand AddNewAccountCommand;
 
 
         //CONSTRUCTOR
         public ChartOfAccountViewModel()
         {
             Task.Run(SetAccountListing).Wait();
+            SortAccountListings();
+            DeleteSelectedAccountCommand = new RelayCommand(DeleteSelectedAccount);
         }
 
 
         //FUNCTIONS
-
+        private void DeleteSelectedAccount()
+        {
+            ChartOfAccountListing.Remove(ChartOfAccountListing[SelectedAccountListingIndex]);
+        }
+        private void SortAccountListings()
+        {
+            ChartOfAccountListing.ToList<ChartOfAccount>().Sort((x, y) => x.AccountName.CompareTo(y.AccountName));
+        }
 
         //TASKS
         private async Task SetAccountListing()

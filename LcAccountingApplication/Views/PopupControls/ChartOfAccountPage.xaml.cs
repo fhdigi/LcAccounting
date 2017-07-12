@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LcAccountingApplication.ViewModels.PopupControls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,10 +21,12 @@ namespace LcAccountingApplication.Views.PopupControls
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateChartOfAccountPage : Page
+    public sealed partial class ChartOfAccountPage : Page
     {
-        public CreateChartOfAccountPage()
+
+        public ChartOfAccountPage(ChartOfAccountViewModel vm)
         {
+            DataContext = vm;
             this.InitializeComponent();
         }
     }

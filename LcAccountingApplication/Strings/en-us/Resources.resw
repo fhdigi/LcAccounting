@@ -285,28 +285,25 @@
   <data name="AddProject_Title.Text" xml:space="preserve">
     <value>Add Project</value>
   </data>
-  <data name="CreateChartOfAccount_AccountName.Header" xml:space="preserve">
+  <data name="ChartOfAccount_AccountName.Header" xml:space="preserve">
     <value>Account Number</value>
   </data>
   <data name="CreateChartOfAccount_AccountNumber.Header" xml:space="preserve">
     <value>Account Name</value>
   </data>
-  <data name="CreateChartOfAccount_AccountType.Header" xml:space="preserve">
+  <data name="ChartOfAccount_AccountType.Header" xml:space="preserve">
     <value>Account Type</value>
   </data>
-  <data name="CreateChartOfAccount_BudgetItemNumber.Header" xml:space="preserve">
+  <data name="ChartOfAccount_BudgetItemNumber.Header" xml:space="preserve">
     <value>Budget Item Number</value>
   </data>
-  <data name="CreateChartOfAccount_Cancel.Content" xml:space="preserve">
+  <data name="ChartOfAccount_Cancel.Content" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="CreateChartOfAccount_SaveAndClose.Content" xml:space="preserve">
-    <value>Save and Close</value>
+  <data name="ChartOfAccount_Save.Content" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="CreateChartOfAccount_SaveAndNew.Content" xml:space="preserve">
-    <value>Save and New</value>
-  </data>
-  <data name="CreateChartOfAccount_Title.Text" xml:space="preserve">
+  <data name="ChartOfAccount_Title.Text" xml:space="preserve">
     <value>Create Chart of Account</value>
   </data>
   <data name="AddProject_Amount.Text" xml:space="preserve">

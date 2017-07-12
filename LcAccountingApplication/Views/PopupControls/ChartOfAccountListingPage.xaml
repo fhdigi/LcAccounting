@@ -12,7 +12,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="64"/>
+            <RowDefinition Height="96"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,27 +20,24 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" x:Uid="ChartOfAccountListing_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
+        <TextBlock Grid.Row="0" x:Uid="ChartOfAccountListing_Title" Style="{StaticResource HeaderTextBlockStyle}"  HorizontalAlignment="Center"/>
 
-        <ScrollViewer HorizontalAlignment="Center" Grid.Row="1" Height="512">
+        <Grid HorizontalAlignment="Center" Grid.Row="1" Height="512">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="96"/>
+                <ColumnDefinition Width="392"/>
+                <ColumnDefinition Width="128"/>
+                <!--<ColumnDefinition Width="92"/>-->
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <!--Date Recorded, Date Due, and Amount-->
+            <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" FontWeight="Bold" x:Uid="ChartOfAccountListing_Number"/>
+            <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"  FontWeight="Bold" x:Uid="ChartOfAccountListing_AccountName"/>
+            <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" FontWeight="Bold"  x:Uid="ChartOfAccountListing_AccountType"/>
+            <!--<TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListing_BudgetItem"/>-->
+        </Grid>
+        <ScrollViewer HorizontalAlignment="Center" Grid.Row="1" Height="512" Margin="0,48,0,0">
             <ListView ItemsSource="{x:Bind ViewModel.ChartOfAccountListing}" SelectedIndex="{x:Bind ViewModel.SelectedAccountListingIndex}">
-
-                <ListView.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="96"/>
-                            <ColumnDefinition Width="392"/>
-                            <ColumnDefinition Width="128"/>
-                            <!--<ColumnDefinition Width="92"/>-->
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-                        <!--Date Recorded, Date Due, and Amount-->
-                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListing_Number"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListing_AccountName"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListing_AccountType"/>
-                        <!--<TextBlock Grid.Column="3" Style="{StaticResource BodyTextBlockStyle}" x:Uid="ChartOfAccountListing_BudgetItem"/>-->
-                    </Grid>
-                </ListView.Header>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="models:ChartOfAccount">
                         <Grid>
@@ -60,14 +57,14 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
-        
+
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-            <Button x:Uid="ChartOfAccountListing_EditAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}"/>
+            <Button x:Uid="ChartOfAccountListing_EditAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}" Command="{x:Bind ViewModel.EditSelectedAccountCommand}"/>
             <Button x:Uid="ChartOfAccountListing_DeleteAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
-            <Button x:Uid="ChartOfAccountListing_AddNewAccount" Margin="8" Command="{x:Bind ViewModel.NavigateToCreateChartOfAccountPageCommand}"/>
-            <Button x:Uid="ChartOfAccountListing_Close" Margin="8" Command="{x:Bind ViewModel.CloseChartOfAccountPageCommand}"/>
+            <Button x:Uid="ChartOfAccountListing_AddNewAccount" Margin="8" Command="{x:Bind ViewModel.AddNewAccountCommand}"/>
+            <Button x:Uid="ChartOfAccountListing_Close" Margin="8" Command="{x:Bind ViewModel.ClosePageCommand}"/>
         </StackPanel>
     </Grid>
 </Page>
