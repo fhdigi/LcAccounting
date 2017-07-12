@@ -9,5 +9,165 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Last Name"
+                   VerticalAlignment="Center" />
+
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Margin="0,5,0,5" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="First Name"                   
+                   VerticalAlignment="Center" />
+
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Margin="0,5,0,5" />
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Middle Initial"                   
+                   VerticalAlignment="Center" />
+
+        <TextBox Grid.Row="2"
+                 Grid.Column="1" 
+                 Margin="0,5,0,5" />
+
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Address"                   
+                   VerticalAlignment="Center" />
+
+        <TextBox Grid.Row="3"
+                 Grid.Column="1" 
+                 Margin="0,5,0,5" />
+
     </Grid>
+
+    <!--
+        
+        <TextBlock HorizontalAlignment="Left" Margin="0,57,0,0" Grid.RowSpan="2" TextWrapping="Wrap" Text="Address"
+                   VerticalAlignment="Top" Grid.ColumnSpan="2" Width="96" />
+        
+        <TextBox Grid.ColumnSpan="4" HorizontalAlignment="Left" Grid.Row="1" TextWrapping="Wrap" Text=""
+                 VerticalAlignment="Top" Height="80" Width="192" />
+        
+        <TextBox Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" TextWrapping="Wrap" Text=" "
+                 VerticalAlignment="Top" Grid.Row="1" Width="118" Margin="26,0,0,0" />
+        
+        <TextBox Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Margin="26,48,0,0" Grid.Row="1"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="25" Width="118" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="26,32,0,0" Grid.Row="1" TextWrapping="Wrap"
+                   Text="Phone Number" VerticalAlignment="Top" Height="16"
+                   Grid.ColumnSpan="3" Width="106" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="26,61,-16,0" Grid.RowSpan="2" TextWrapping="Wrap"
+                   Text="Social Security #" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="134" />
+        
+        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text=""
+                 VerticalAlignment="Top" Width="139" Margin="0,48,0,0" />
+        
+        <TextBlock HorizontalAlignment="Left" Margin="0,28,0,0" Grid.Row="2" TextWrapping="Wrap" Text="City"
+                   VerticalAlignment="Top" Grid.ColumnSpan="2" Width="86" />
+        
+        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="0,28,0,0" Grid.Row="2" TextWrapping="Wrap"
+                   Text="State" VerticalAlignment="Top" Height="20" />
+        
+        <TextBox Grid.ColumnSpan="2" Grid.Column="4" HorizontalAlignment="Left" Margin="0,48,0,0" Grid.Row="2"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="96" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="1,28,0,0" Grid.Row="2" TextWrapping="Wrap"
+                   Text="Zip Code" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        
+        <ListBox Grid.Column="3" Height="25" Margin="0,53,5,0" Grid.Row="2" VerticalAlignment="Top" />
+        
+        <TextBlock HorizontalAlignment="Left" Margin="0,5,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Hourly Rate"
+                   VerticalAlignment="Top" Grid.ColumnSpan="3" Width="106" />
+        
+        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,25,0,0" Grid.Row="3" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="96" />
+        
+        <TextBox Grid.ColumnSpan="2" Grid.Column="2" HorizontalAlignment="Left" Margin="10,25,0,0" Grid.Row="3"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86" />
+        
+        <ListBox Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Height="32" Margin="10,25,0,0"
+                 Grid.Row="3" VerticalAlignment="Top" Width="103" SelectionChanged="listBox1_SelectionChanged" />
+        
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="5,5,0,0" Grid.Row="3" TextWrapping="Wrap"
+                   Text="Additional Pay" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="122"
+                   SelectionChanged="textBlock10_SelectionChanged" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="10,5,0,0" Grid.Row="3" TextWrapping="Wrap"
+                   Text="Employee Type" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="103" />
+        
+        <RadioButton Grid.ColumnSpan="5" Content="This Employee Is Unactive" HorizontalAlignment="Left"
+                     Margin="0,-6,0,0" Grid.Row="4" VerticalAlignment="Top" Width="230" />
+        
+        <TextBox Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="96" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="38,62,-28,0" Grid.Row="3" TextWrapping="Wrap"
+                   Text="Termination Date" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="134" Grid.RowSpan="2" />
+        
+        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Row="5" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="129" />
+        
+        <TextBlock HorizontalAlignment="Left" Margin="15,60,0,0" Grid.Row="4" TextWrapping="Wrap"
+                   Text="Emergency Contact" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="129" />
+        
+        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Margin="20,60,0,-20" Grid.Row="4" TextWrapping="Wrap"
+                   Text="Emergency Phone" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="124" />
+        
+        <TextBlock HorizontalAlignment="Left" Margin="15,59,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Relationship"
+                   VerticalAlignment="Top" Height="16" Grid.ColumnSpan="3" Width="91" />
+        
+        <TextBlock HorizontalAlignment="Left" Margin="15,37,0,0" Grid.Row="6" TextWrapping="Wrap"
+                   Text="Medicial Conditions" VerticalAlignment="Top" RenderTransformOrigin="0.532,1.375"
+                   Grid.ColumnSpan="4" Width="140" Height="21" />
+        
+        <TextBox Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="15,0,0,0" Grid.Row="6" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Width="162" />
+        
+        <TextBox Grid.ColumnSpan="4" HorizontalAlignment="Left" Margin="10,58,0,0" Grid.Row="6" TextWrapping="Wrap"
+                 Text="" VerticalAlignment="Top" Grid.RowSpan="2" Height="92" Width="167" />
+        
+        <TextBox Grid.ColumnSpan="3" Grid.Column="4" HorizontalAlignment="Left" Margin="10,58,0,0" Grid.Row="6"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.RowSpan="2" Height="92" Width="134" />
+        
+        <TextBlock Grid.Column="4" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" TextWrapping="Wrap"
+                   Text="Notes" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="86" />
+        
+        <TextBox Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="5"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124" />
+
+    -->
+    
 </Page>
