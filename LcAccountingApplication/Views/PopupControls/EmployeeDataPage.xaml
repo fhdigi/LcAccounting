@@ -26,6 +26,13 @@
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
             <RowDefinition Height="40" />
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -73,7 +80,7 @@
                    Grid.Column="0"
                    Text="Social Security #"
                    VerticalAlignment="Center"/>
-        
+
         <TextBox Grid.Row="4"
                  Grid.Column="1"
                  Margin="0,5,0,5"/>
@@ -141,7 +148,7 @@
         <TextBox Grid.Row="12"
                  Grid.Column="1"
                  VerticalAlignment="Center"/>
-       
+
         <TextBlock Grid.Row="13"
                    Grid.Column="0"
                    VerticalAlignment="Center"
@@ -153,11 +160,11 @@
         <TextBlock Grid.Row="14"
                    Grid.Column="0"
                    VerticalAlignment="Center"
-                   Text="This EMployee is Inactive"/>
+                   Text="This Employee is Inactive"/>
         <CheckBox Grid.Row="14"
                  Grid.Column="1"
-                 VerticalAlignment="Center"
-                  HorizontalAlignment="Center"/>
+                 VerticalAlignment="Center"/>
+
 
         <TextBlock Grid.Row="15"
                    Grid.Column="0"
@@ -165,8 +172,51 @@
                    Text="Termination Date"/>
         <DatePicker Grid.Row="15"
                  Grid.Column="1"
-                 VerticalAlignment="Center"
-                  HorizontalAlignment="Center"/>
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="16"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Emergency Contact"/>
+        <TextBox Grid.Row="16"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="17"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Emergency Phone #"/>
+        <TextBox Grid.Row="17"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="18"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Relationship"/>
+        <TextBox Grid.Row="18"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="19"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Medical Conditions"/>
+        <TextBox Grid.Row="19"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+
+        <TextBlock Grid.Row="20"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Notes"/>
+        <TextBox Grid.Row="20"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+
+
 
 
 
@@ -275,5 +325,5 @@
                  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="124" />
 
     -->
-    
+
 </Page>
