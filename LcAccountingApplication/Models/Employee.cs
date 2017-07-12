@@ -12,6 +12,8 @@ namespace LcAccountingApplication.Models
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string MiddleInitial { get; set; }
+        public int PinNumber { get; set; }
+        public bool IsAdmin { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }

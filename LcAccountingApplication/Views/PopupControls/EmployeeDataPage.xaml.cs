@@ -13,25 +13,17 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-using LcAccountingApplication.ViewModels.PopupControls;
-using LcAccountingApplication.Helpers;
-
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace LcAccountingApplication.Views.PopupControls
 {
-    public sealed partial class ChartOfAccountListingPage : Page
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class EmployeeDataPage : Page
     {
-        ChartOfAccountViewModel ViewModel;
-
-        public ChartOfAccountListingPage()
+        public EmployeeDataPage()
         {
-            ViewModel = new ChartOfAccountViewModel();
-            ViewModel.NavigateToCreateChartOfAccountPageCommand = new RelayCommand(() => { Frame.Navigate(typeof(CreateChartOfAccountPage)); });
-            ViewModel.CloseChartOfAccountPageCommand = new RelayCommand(() => { });
-
-            DataContext = ViewModel;
-
             this.InitializeComponent();
         }
     }

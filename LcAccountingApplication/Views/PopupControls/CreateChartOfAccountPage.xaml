@@ -15,9 +15,6 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -26,19 +23,14 @@
 
         <TextBlock Grid.Row="0" Grid.ColumnSpan="2" x:Uid="CreateChartOfAccount_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
 
-        <TextBlock Grid.Row="1" x:Uid="CreateChartOfAccount_AccountNumber" Style="{StaticResource BodyTextBlockStyle}"/>
-        <TextBlock Grid.Row="3" x:Uid="CreateChartOfAccount_AccountName" Style="{StaticResource BodyTextBlockStyle}"/>
-        <TextBlock Grid.Row="5" x:Uid="CreateChartOfAccount_BudgetItemNumber" Style="{StaticResource BodyTextBlockStyle}"/>
-        <TextBlock Grid.Row="7" x:Uid="CreateChartOfAccount_AccountType" Style="{StaticResource BodyTextBlockStyle}"/>
-
-        <ComboBox Grid.Row="2" Grid.Column="0" Margin="8"/>
-        <TextBox Grid.Row="4" Grid.Column="0" Margin="8"/>
-        <TextBox Grid.Row="6" Grid.Column="0" Margin="8"/>
-        <TextBox Grid.Row="10" Grid.Column="0" Margin="8"/>
+        <ComboBox Grid.Row="1" x:Uid="CreateChartOfAccount_AccountNumber" Grid.Column="0" Margin="8"/>
+        <TextBox Grid.Row="2" x:Uid="CreateChartOfAccount_AccountName" Grid.Column="0" Margin="8"/>
+        <TextBox Grid.Row="3" x:Uid="CreateChartOfAccount_BudgetItemNumber" Grid.Column="0" Margin="8"/>
+        <TextBox Grid.Row="4" x:Uid="CreateChartOfAccount_AccountType" Grid.Column="0" Margin="8"/>
 
         <Button x:Uid="CreateChartOfAccount_SaveAndNew" Grid.Column="1" Grid.Row="2"/>
-        <Button x:Uid="CreateChartOfAccount_SaveAndClose" Grid.Column="1" Grid.Row="4"/>
-        <Button x:Uid="CreateChartOfAccount_Cancel" Grid.Column="1" Grid.Row="6"/>
+        <Button x:Uid="CreateChartOfAccount_SaveAndClose" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Uid="CreateChartOfAccount_Cancel" Grid.Column="1" Grid.Row="4"/>
         
     </Grid>
 </Page>
