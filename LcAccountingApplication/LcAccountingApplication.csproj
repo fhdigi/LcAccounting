@@ -130,6 +130,7 @@
     <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ChartOfAccount.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\Suppliers.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
