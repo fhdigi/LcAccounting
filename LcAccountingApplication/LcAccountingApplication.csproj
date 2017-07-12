@@ -130,6 +130,7 @@
     <Compile Include="Models\Bills.cs" />
     <Compile Include="Models\ChartOfAccount.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\PopupControls\Project.cs" />
     <Compile Include="Models\Suppliers.cs" />
     <Compile Include="Services\ActivationService.cs" />
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
@@ -314,9 +315,7 @@
     <Compile Include="Helpers\ResourceExtensions.cs" />
     <Compile Include="Helpers\Singleton.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\PopupControls\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
