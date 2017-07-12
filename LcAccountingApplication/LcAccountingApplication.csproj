@@ -136,6 +136,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\PayablesViewModel.cs" />
     <Compile Include="ViewModels\PopupControls\ChartOfAccountViewModel.cs" />
+    <Compile Include="ViewModels\PopupControls\EmployeeDataViewModel.cs" />
     <Compile Include="ViewModels\ReceivablesViewModel.cs" />
     <Compile Include="ViewModels\ShellNavigationItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -165,6 +166,9 @@
     </Compile>
     <Compile Include="Views\PopupControls\CreateInvoicePage.xaml.cs">
       <DependentUpon>CreateInvoicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopupControls\EmployeeDataPage.xaml.cs">
+      <DependentUpon>EmployeeDataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopupControls\PayBillPage.xaml.cs">
       <DependentUpon>PayBillPage.xaml</DependentUpon>
@@ -251,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopupControls\CreateInvoicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopupControls\EmployeeDataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
