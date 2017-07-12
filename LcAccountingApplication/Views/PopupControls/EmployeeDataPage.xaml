@@ -69,6 +69,112 @@
                  Grid.Column="1" 
                  Margin="0,5,0,5" />
 
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Social Security #"
+                   VerticalAlignment="Center"/>
+        
+        <TextBox Grid.Row="4"
+                 Grid.Column="1"
+                 Margin="0,5,0,5"/>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Text="Phone Number"
+                   VerticalAlignment="Center"/>
+
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 Margin="0,5,0,5"/>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="City"/>
+        <TextBox Grid.Row="6"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="State"/>
+        <ListBox Grid.Row="7"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="8"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Zip Code"/>
+        <TextBox Grid.Row="8"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="9"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Date Hired"/>
+        <DatePicker Grid.Row="9"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Hourly Rate"/>
+        <TextBox Grid.Row="10"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="11"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Additional Pay"/>
+        <TextBox Grid.Row="11"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="12"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text=" Employee Type"/>
+        <TextBox Grid.Row="12"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+       
+        <TextBlock Grid.Row="13"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="D.O.B"/>
+        <DatePicker Grid.Row="13"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+        <TextBlock Grid.Row="14"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="This EMployee is Inactive"/>
+        <CheckBox Grid.Row="14"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                  HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="15"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Text="Termination Date"/>
+        <DatePicker Grid.Row="15"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"
+                  HorizontalAlignment="Center"/>
+
+
+
+
+
+
+
+
     </Grid>
 
     <!--
