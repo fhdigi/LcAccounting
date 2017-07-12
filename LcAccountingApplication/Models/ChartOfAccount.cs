@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace LcAccountingApplication.Models.PopupControls
 {

@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 using LcAccountingApplication.ViewModels.PopupControls;
+using LcAccountingApplication.Helpers;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,8 +27,11 @@ namespace LcAccountingApplication.Views.PopupControls
         public ChartOfAccountListingPage()
         {
             ViewModel = new ChartOfAccountViewModel();
+            ViewModel.NavigateToCreateChartOfAccountPageCommand = new RelayCommand(() => { Frame.Navigate(typeof(CreateChartOfAccountPage)); });
+            ViewModel.CloseChartOfAccountPageCommand = new RelayCommand(() => { });
 
             DataContext = ViewModel;
+
             this.InitializeComponent();
         }
     }
