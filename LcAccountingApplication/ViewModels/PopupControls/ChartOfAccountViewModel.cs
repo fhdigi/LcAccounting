@@ -18,22 +18,34 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         //PROPERTIES
         public ObservableCollection<ChartOfAccount> ChartOfAccountListing { get; set; }
         public int SelectedAccountListingIndex { get; set; }
+        public int SelectedGroupingIndex { get; set; }
+        public List<AccountTypes> AccountTypesList { get; protected set; }
+
+
+        public ChartOfAccount NewAccountBuffer; //Useed when creating a new accont (Discarded if Cancel, Added if Save)
+        public bool IsNewAccount; //True if creating a chart of account. False is editing one.
+        public ChartOfAccount SelectedAccountListing
+        {
+            get
+            {
+                return ChartOfAccountListing[SelectedAccountListingIndex];
+            }
+        }
         public bool IsAccountListingSelected
         {
             get
             {
-                return SelectedAccountListingIndex >= -1;
+                return SelectedAccountListingIndex > -1;
             }
         }
 
-
-
         //COMMANDS
-        public ICommand EditSelectedAccountCommand;
-        public ICommand ClosePageCommand;
+        public ICommand EditSelectedAccountCommand; //Defined in code-behind
+        public ICommand ClosePageCommand; //Defined in code-behind
         public ICommand DeleteSelectedAccountCommand;
-        public ICommand AddNewAccountCommand;
+        public ICommand AddNewAccountCommand; //Defined in code-behind
 
+        public ICommand SaveEditedAccountCommand;
 
         //CONSTRUCTOR
         public ChartOfAccountViewModel()
@@ -41,20 +53,25 @@ namespace LcAccountingApplication.ViewModels.PopupControls
             Task.Run(SetAccountListing).Wait();
             SortAccountListings();
             DeleteSelectedAccountCommand = new RelayCommand(DeleteSelectedAccount);
+
+            var _enumeratorValue = Enum.GetValues(typeof(AccountTypes)).Cast<AccountTypes>();
+            AccountTypesList = _enumeratorValue.ToList();
         }
 
 
         //FUNCTIONS
-        private void DeleteSelectedAccount()
+        private async void DeleteSelectedAccount()
         {
-            ChartOfAccountListing.Remove(ChartOfAccountListing[SelectedAccountListingIndex]);
+            await ChartOfAccount.DeleteChartOfAccount(ChartOfAccountListing[SelectedAccountListingIndex]);
+            SortAccountListings();
         }
-        private void SortAccountListings()
+        public void SortAccountListings()
         {
-            ChartOfAccountListing.ToList<ChartOfAccount>().Sort((x, y) => x.AccountName.CompareTo(y.AccountName));
+            List<ChartOfAccount> sortedList = ChartOfAccountListing.ToList<ChartOfAccount>();
+                sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
+            ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
+            Task.Run(ChartOfAccount.ChartOfAccountListing).Wait();
         }
-
-        //TASKS
         private async Task SetAccountListing()
         {
             ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(await ChartOfAccount.ChartOfAccountListing());

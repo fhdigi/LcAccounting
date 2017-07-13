@@ -286,7 +286,7 @@
     <value>Add Project</value>
   </data>
   <data name="ChartOfAccount_AccountName.Header" xml:space="preserve">
-    <value>Account Number</value>
+    <value>Account Name</value>
   </data>
   <data name="CreateChartOfAccount_AccountNumber.Header" xml:space="preserve">
     <value>Account Name</value>
@@ -294,8 +294,8 @@
   <data name="ChartOfAccount_AccountType.Header" xml:space="preserve">
     <value>Account Type</value>
   </data>
-  <data name="ChartOfAccount_BudgetItemNumber.Header" xml:space="preserve">
-    <value>Budget Item Number</value>
+  <data name="ChartOfAccount_AccountNumber.Header" xml:space="preserve">
+    <value>Account Number</value>
   </data>
   <data name="ChartOfAccount_Cancel.Content" xml:space="preserve">
     <value>Cancel</value>

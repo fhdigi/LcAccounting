@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace LcAccountingApplication.Models.PopupControls
 {
@@ -51,10 +52,10 @@ namespace LcAccountingApplication.Models.PopupControls
     }
     public enum AccountTypes
     {
-        Asset,
-        Liability,
-        Equity,
-        Income,
-        Expense
+        Asset = 0,
+        Liability = 1,
+        Equity = 2,
+        Income = 3,
+        Expense = 4
     }
 }

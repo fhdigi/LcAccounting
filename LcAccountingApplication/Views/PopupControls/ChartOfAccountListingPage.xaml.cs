@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Navigation;
 
 using LcAccountingApplication.ViewModels.PopupControls;
 using LcAccountingApplication.Helpers;
+using LcAccountingApplication.Models.PopupControls;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -28,13 +30,34 @@ namespace LcAccountingApplication.Views.PopupControls
         {
             ViewModel = new ChartOfAccountViewModel()
             {
-                EditSelectedAccountCommand = new RelayCommand(() => { Frame.Navigate(typeof(ChartOfAccountPage)); }),
-                ClosePageCommand = new RelayCommand(() => { Frame.GoBack(); }),
-                AddNewAccountCommand = new RelayCommand(() => { Frame.Navigate(typeof(ChartOfAccountPage)); })
+                EditSelectedAccountCommand = new RelayCommand(() =>
+                {
+                    ViewModel.IsNewAccount = false;
+                    ViewModel.NewAccountBuffer = ViewModel.SelectedAccountListing;
+                    Frame.Navigate(typeof(ChartOfAccountPage), this.ViewModel);
+                }),
+                ClosePageCommand = new RelayCommand(() =>
+                {
+                    Frame.GoBack();
+                }),
+                AddNewAccountCommand = new RelayCommand(() =>
+                {
+                    ViewModel.IsNewAccount = true;
+                    ViewModel.NewAccountBuffer = new ChartOfAccount();
+                    Frame.Navigate(typeof(ChartOfAccountPage), this.ViewModel);
+                }),
+                SaveEditedAccountCommand = new RelayCommand(async () =>
+                {
+                    if (ViewModel.IsNewAccount) await ChartOfAccount.InsertChartOfAccount(ViewModel.NewAccountBuffer);
+                    else await ChartOfAccount.UpdateChartOfAccount(ViewModel.NewAccountBuffer);
+                    ViewModel.SortAccountListings();
+                    Frame.GoBack();
+                })
             };
             DataContext = ViewModel;
 
             this.InitializeComponent();
         }
+
     }
 }

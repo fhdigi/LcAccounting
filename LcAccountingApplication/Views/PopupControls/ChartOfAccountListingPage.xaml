@@ -60,7 +60,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
             <Button x:Uid="ChartOfAccountListing_EditAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}" Command="{x:Bind ViewModel.EditSelectedAccountCommand}"/>
-            <Button x:Uid="ChartOfAccountListing_DeleteAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}"/>
+            <Button x:Uid="ChartOfAccountListing_DeleteAccount" Margin="8" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}" Command="{x:Bind ViewModel.DeleteSelectedAccountCommand}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
             <Button x:Uid="ChartOfAccountListing_AddNewAccount" Margin="8" Command="{x:Bind ViewModel.AddNewAccountCommand}"/>

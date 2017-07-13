@@ -24,10 +24,17 @@ namespace LcAccountingApplication.Views.PopupControls
     public sealed partial class ChartOfAccountPage : Page
     {
 
-        public ChartOfAccountPage(ChartOfAccountViewModel vm)
+        ChartOfAccountViewModel ViewModel;
+
+        public ChartOfAccountPage()
         {
-            DataContext = vm;
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel = (ChartOfAccountViewModel)e.Parameter;
+            DataContext = ViewModel;
         }
     }
 }
