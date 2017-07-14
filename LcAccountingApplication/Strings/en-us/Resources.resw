@@ -135,22 +135,22 @@
   <data name="Company_Title.Text" xml:space="preserve">
     <value>Company</value>
   </data>
-  <data name="Shell_Home.Text" xml:space="preserve">
+  <data name="Shell_Home" xml:space="preserve">
     <value>Home</value>
   </data>
-  <data name="Shell_Banking.Text" xml:space="preserve">
+  <data name="Shell_Banking" xml:space="preserve">
     <value>Banking</value>
   </data>
   <data name="Shell_Receivables.Text" xml:space="preserve">
     <value>Receivables</value>
   </data>
-  <data name="Shell_Payables.Text" xml:space="preserve">
+  <data name="Shell_Payables" xml:space="preserve">
     <value>Payables</value>
   </data>
-  <data name="Shell_Employees.Text" xml:space="preserve">
+  <data name="Shell_Employees" xml:space="preserve">
     <value>Employees</value>
   </data>
-  <data name="Shell_Company.Text" xml:space="preserve">
+  <data name="Shell_Company" xml:space="preserve">
     <value>Company</value>
   </data>
   <data name="ChartOfAccountListing_AccountName.Text" xml:space="preserve">
@@ -258,7 +258,7 @@
   <data name="PayBills_Vendor.Text" xml:space="preserve">
     <value>Vendor</value>
   </data>
-  <data name="AddProject_AddNewCustomer.Text" xml:space="preserve">
+  <data name="hubVariableSizedWrapGrid" xml:space="preserve">
     <value>Add New Customer</value>
   </data>
   <data name="AddProject_ContactNumber" xml:space="preserve">
@@ -509,5 +509,8 @@
   </data>
   <data name="Vendor_ZipCode.Text" xml:space="preserve">
     <value>ZIP Code</value>
+  </data>
+  <data name="Home_Feed.Text" xml:space="preserve">
+    <value>Feed</value>
   </data>
 </root>

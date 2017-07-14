@@ -144,12 +144,12 @@ namespace LcAccountingApplication.ViewModels
 
             // More on Segoe UI Symbol icons: https://docs.microsoft.com/windows/uwp/style/segoe-ui-symbol-font
             // Edit String/en-US/Resources.resw: Add a menu item title for each page
-            _primaryItems.Add(ShellNavigationItem.FromType<HomePage>("Shell_Home".GetLocalized(), Symbol.Document));
-            _primaryItems.Add(ShellNavigationItem.FromType<BankingPage>("Shell_Banking".GetLocalized(), Symbol.Document));
-            _primaryItems.Add(ShellNavigationItem.FromType<ReceivablesPage>("Shell_Receivables".GetLocalized(), Symbol.Document));
-            _primaryItems.Add(ShellNavigationItem.FromType<PayablesPage>("Shell_Payables".GetLocalized(), Symbol.Document));
-            _primaryItems.Add(ShellNavigationItem.FromType<EmployeesPage>("Shell_Employees".GetLocalized(), Symbol.Document));
-            _primaryItems.Add(ShellNavigationItem.FromType<CompanyPage>("Shell_Company".GetLocalized(), Symbol.Document));
+            _primaryItems.Add(ShellNavigationItem.FromType<HomePage>("Shell_Home".GetLocalized(), Symbol.Home));
+            _primaryItems.Add(ShellNavigationItem.FromType<BankingPage>("Shell_Banking".GetLocalized(), Symbol.ReShare));
+            _primaryItems.Add(ShellNavigationItem.FromType<ReceivablesPage>("Shell_Receivables".GetLocalized(), Symbol.Download));
+            _primaryItems.Add(ShellNavigationItem.FromType<PayablesPage>("Shell_Payables".GetLocalized(), Symbol.Upload));
+            _primaryItems.Add(ShellNavigationItem.FromType<EmployeesPage>("Shell_Employees".GetLocalized(), Symbol.Contact));
+            _primaryItems.Add(ShellNavigationItem.FromType<CompanyPage>("Shell_Company".GetLocalized(), Symbol.People));
         }
 
         private void ItemSelected(ItemClickEventArgs args)
