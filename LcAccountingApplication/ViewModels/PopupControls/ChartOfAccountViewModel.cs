@@ -20,17 +20,11 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public int SelectedAccountListingIndex { get; set; }
         public int SelectedGroupingIndex { get; set; }
         public List<AccountTypes> AccountTypesList { get; protected set; }
+        public ChartOfAccount SelectedAccountListing { get; set; }
 
 
         public ChartOfAccount NewAccountBuffer; //Useed when creating a new accont (Discarded if Cancel, Added if Save)
         public bool IsNewAccount; //True if creating a chart of account. False is editing one.
-        public ChartOfAccount SelectedAccountListing
-        {
-            get
-            {
-                return ChartOfAccountListing[SelectedAccountListingIndex];
-            }
-        }
         public bool IsAccountListingSelected
         {
             get
@@ -62,7 +56,7 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         //FUNCTIONS
         private async void DeleteSelectedAccount()
         {
-            await ChartOfAccount.DeleteChartOfAccount(ChartOfAccountListing[SelectedAccountListingIndex]);
+            await ChartOfAccount.DeleteChartOfAccount(SelectedAccountListing);
             SortAccountListings();
         }
         public void SortAccountListings()
