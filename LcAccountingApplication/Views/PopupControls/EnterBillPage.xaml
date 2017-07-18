@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -20,48 +20,27 @@
         </Grid.ColumnDefinitions>
         <TextBlock x:Uid="EnterBill_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <TextBlock x:Uid="EnterBill_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <ComboBox Margin="8,0" VerticalAlignment="Center"/>
-            <Button Margin="8,0" x:Uid="EnterBill_AddVendor"/>
+            <!--
+            <ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Bind ViewModel.VendorList}" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex}" Margin="8,0" VerticalAlignment="Center"/>
+            -->
+            <Button Command="{x:Bind ViewModel.NavigateToAddVendorPageCommand}" Margin="8,0" x:Uid="EnterBill_AddVendor" />
         </StackPanel>
-        <Grid Grid.Row="2" Margin="0,8" HorizontalAlignment="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-                <RowDefinition Height="32"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Margin="8,0" x:Uid="EnterBill_Amount" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="2" Margin="8,0" x:Uid="EnterBill_InvoiceID" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="4" Margin="8,0" x:Uid="EnterBill_DateRecieved" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="6" Margin="8,0" x:Uid="EnterBill_DateDue" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <TextBlock Grid.Row="8" Margin="8,0" x:Uid="EnterBill_AnticipatedPayDate" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-
-            <TextBox Grid.Row="1" Margin="8,0" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="3" Margin="8,0" VerticalAlignment="Center"/>
-            <DatePicker Grid.Row="5" Margin="8,0" VerticalAlignment="Center"/>
-            <DatePicker Grid.Row="7" Margin="8,0" VerticalAlignment="Center"/>
-            <DatePicker Grid.Row="9" Margin="8,0" VerticalAlignment="Center"/>
-        </Grid>
+        <StackPanel Grid.Row="2" Margin="0,8" HorizontalAlignment="Center">
+            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.Amount}" Margin="8" x:Uid="EnterBill_Amount" VerticalAlignment="Center"/>
+            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.InvNumber}" Margin="8" x:Uid="EnterBill_InvoiceID" VerticalAlignment="Center"/>
+            <!--
+            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.Received, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateRecieved" VerticalAlignment="Center"/>
+            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.DateDue, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateDue" VerticalAlignment="Center"/>
+            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.DateAnticipated, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_AnticipatedPayDate" VerticalAlignment="Center"/>
+            -->
+        </StackPanel>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
-            <TextBlock x:Uid="EnterBill_ChartOfAccount" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <ComboBox Margin="8,0" VerticalAlignment="Center"/>
-            <Button Margin="8,0" x:Uid="EnterBill_AddAccount"/>
+            <ComboBox x:Uid="EnterBill_ChartOfAccount" Margin="8,0" VerticalAlignment="Center"/>
+            <Button Command="{x:Bind ViewModel.NavigateToAddAccountPageCommand}" Margin="8,0" x:Uid="EnterBill_AddAccount"/>
         </StackPanel>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
-            <Button Margin="8,0" x:Uid="EnterBill_SaveAndNew" VerticalAlignment="Center"/>
-            <Button Margin="8,0" x:Uid="EnterBill_SaveAndClose" VerticalAlignment="Center"/>
-            <Button Margin="8,0" x:Uid="EnterBill_Cancel" VerticalAlignment="Center"/>
+            <Button Margin="8,0" x:Uid="EnterBill_SaveAndClose" VerticalAlignment="Center" Command="{x:Bind ViewModel.SaveAndCloseCommand}"/>
+            <Button Margin="8,0" x:Uid="EnterBill_Cancel" VerticalAlignment="Center" Command="{x:Bind ViewModel.CancelCommand}"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -1,4 +1,6 @@
-﻿using Windows.UI.Xaml.Controls;
+﻿using LcAccountingApplication.ViewModels;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -9,9 +11,18 @@ namespace LcAccountingApplication.Views.PopupControls
     /// </summary>
     public sealed partial class EnterBillPage : Page
     {
+        PayablesViewModel ViewModel;
+
         public EnterBillPage()
         {
             InitializeComponent();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel = (PayablesViewModel)e.Parameter;
+            DataContext = ViewModel;
+        }
     }
+
+
 }

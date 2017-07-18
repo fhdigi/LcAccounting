@@ -19,7 +19,6 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public ObservableCollection<ChartOfAccount> ChartOfAccountListing { get; set; }
         public int SelectedAccountListingIndex { get; set; }
         public int SelectedGroupingIndex { get; set; }
-        public List<AccountTypes> AccountTypesList { get; protected set; }
         public ChartOfAccount SelectedAccountListing { get; set; }
 
 
@@ -48,8 +47,6 @@ namespace LcAccountingApplication.ViewModels.PopupControls
             SortAccountListings();
             DeleteSelectedAccountCommand = new RelayCommand(DeleteSelectedAccount);
 
-            var _enumeratorValue = Enum.GetValues(typeof(AccountTypes)).Cast<AccountTypes>();
-            AccountTypesList = _enumeratorValue.ToList();
         }
 
 

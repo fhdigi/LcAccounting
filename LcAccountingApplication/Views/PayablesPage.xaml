@@ -24,6 +24,23 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <StackPanel Margin="8">
+                <Grid Height="auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="navigateToEnterBillsPageButton" x:Uid="Payables_EnterBills" Grid.Column="0" HorizontalAlignment="Stretch" Click="navigateToEnterBillsPageButton_Click"/>
+                    <Button x:Name="navigateToPayBillsPageButton" x:Uid="Payables_PayBills" Grid.Column="1" HorizontalAlignment="Stretch" Click="navigateToPayBillsPageButton_Click"/>
+                </Grid>
+                <Frame x:Name="payablesPageFrame" VerticalAlignment="Top" BorderThickness="2"/>
+                <Grid>
+                    <!--Suppliers-->
+                </Grid>
+                <Grid>
+                    <!--Payable Reports-->
+                </Grid>
+            </StackPanel>
         </Grid>
     
         <!--  Adaptive triggers  -->

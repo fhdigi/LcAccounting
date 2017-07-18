@@ -8,6 +8,7 @@ namespace LcAccountingApplication.ViewModels
     {
         public CompanyViewModel()
         {
+            
         }
     }
 }

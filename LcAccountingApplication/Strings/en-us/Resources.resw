@@ -141,7 +141,7 @@
   <data name="Shell_Banking" xml:space="preserve">
     <value>Banking</value>
   </data>
-  <data name="Shell_Receivables.Text" xml:space="preserve">
+  <data name="Shell_Receivables" xml:space="preserve">
     <value>Receivables</value>
   </data>
   <data name="Shell_Payables" xml:space="preserve">
@@ -180,31 +180,31 @@
   <data name="ChartOfAccountListing_Title.Text" xml:space="preserve">
     <value>Chart of Account Listing</value>
   </data>
-  <data name="EnterBill_AddAccount.Text" xml:space="preserve">
+  <data name="EnterBill_AddAccount.Content" xml:space="preserve">
     <value>Add New Account</value>
   </data>
   <data name="EnterBill_AddVendor.Content" xml:space="preserve">
     <value>Add New Vendor</value>
   </data>
-  <data name="EnterBill_Amount.Text" xml:space="preserve">
+  <data name="EnterBill_Amount.Header" xml:space="preserve">
     <value>Amount</value>
   </data>
-  <data name="EnterBill_AnticipatedPayDate.Text" xml:space="preserve">
+  <data name="EnterBill_AnticipatedPayDate.Header" xml:space="preserve">
     <value>Anticipated Pay Date</value>
   </data>
   <data name="EnterBill_Cancel.Content" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="EnterBill_ChartOfAccount.Text" xml:space="preserve">
+  <data name="EnterBill_ChartOfAccount.Header" xml:space="preserve">
     <value>Chart of Account</value>
   </data>
-  <data name="EnterBill_DateDue.Text" xml:space="preserve">
+  <data name="EnterBill_DateDue.Header" xml:space="preserve">
     <value>Date Due</value>
   </data>
-  <data name="EnterBill_DateRecieved.Text" xml:space="preserve">
+  <data name="EnterBill_DateRecieved.Header" xml:space="preserve">
     <value>Date Recieved</value>
   </data>
-  <data name="EnterBill_InvoiceID.Text" xml:space="preserve">
+  <data name="EnterBill_InvoiceID.Header" xml:space="preserve">
     <value>Invoice #</value>
   </data>
   <data name="EnterBill_SaveAndClose.Content" xml:space="preserve">
@@ -216,7 +216,7 @@
   <data name="EnterBill_Title.Text" xml:space="preserve">
     <value>Enter Bill</value>
   </data>
-  <data name="EnterBill_Vendor.Text" xml:space="preserve">
+  <data name="EnterBill_Vendor.Header" xml:space="preserve">
     <value>Vendor</value>
   </data>
   <data name="PayBills_Amount.Text" xml:space="preserve">
@@ -512,5 +512,11 @@
   </data>
   <data name="Home_Feed.Text" xml:space="preserve">
     <value>Feed</value>
+  </data>
+  <data name="Payables_EnterBills.Content" xml:space="preserve">
+    <value>Enter Bills</value>
+  </data>
+  <data name="Payables_PayBills.Content" xml:space="preserve">
+    <value>Pay Bills</value>
   </data>
 </root>

@@ -30,51 +30,51 @@
             </StackPanel>-->
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <ScrollViewer HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <VariableSizedWrapGrid x:Name="hubVariableSizedWrapGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                     <Grid Height="300" Width="250" Background="LightGray" Margin="16">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="8"/>
-                                <RowDefinition Height="4*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                            <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                            <StackPanel>
-                                <!--Content-->
-                            </StackPanel>
-                        </Grid>
-                        <Grid Height="300" Width="250" Background="LightGray" Margin="16">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="8"/>
-                                <RowDefinition Height="4*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                            <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                            <StackPanel>
-                                <!--Content-->
-                            </StackPanel>
-                        </Grid>
-                        <Grid Height="300" Width="250" Background="LightGray" Margin="16">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"/>
-                                <RowDefinition Height="8"/>
-                                <RowDefinition Height="4*"/>
-                            </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                            <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                            <StackPanel>
-                                <!--Content-->
-                            </StackPanel>
-                        </Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
+                        <StackPanel>
+                            <!--Content-->
+                        </StackPanel>
+                    </Grid>
+                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
+                        <StackPanel>
+                            <!--Content-->
+                        </StackPanel>
+                    </Grid>
+                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="8"/>
+                            <RowDefinition Height="4*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
+                        <StackPanel>
+                            <!--Content-->
+                        </StackPanel>
+                    </Grid>
                     <Grid Height="300" Width="250" Background="LightGray" Margin="16">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
@@ -89,15 +89,14 @@
                     </Grid>
                 </VariableSizedWrapGrid>
             </ScrollViewer>
-
             <Grid Grid.Column="1" Grid.Row="0" x:Name="feedListView" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Width="128">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 
-                <TextBlock x:Uid="Home_Feed" Style="{StaticResource SubtitleTextBlockStyle}" Grid.Row="0"/>
-                <ScrollViewer Grid.Row="1">
+                <TextBlock x:Name="feedTextBlock" x:Uid="Home_Feed" Style="{StaticResource SubheaderTextBlockStyle}" Grid.Row="0"/>
+                <ScrollViewer Grid.Row="1" VerticalAlignment="Stretch">
                     <ListView>
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -140,6 +139,8 @@
                         <Setter Target="feedListView.(Grid.Row)" Value="1"/>
                         <Setter Target="feedListView.(Grid.Column)" Value="0"/>
                         <Setter Target="feedListView.Width" Value="{x:Bind hubVariableSizedWrapGrid.Width}"/>
+                        <Setter Target="feedTextBlock.(Grid.Row)" Value="1"/>
+                        <Setter Target="feedTextBlock.(Grid.Column)" Value="0"/>
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>

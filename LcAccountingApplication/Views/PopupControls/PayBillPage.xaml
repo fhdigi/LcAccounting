@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -26,8 +26,8 @@
             <TextBlock x:Uid="PayBills_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
             <ComboBox Margin="8,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </StackPanel>
-        <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-        <ListView Grid.Row="3" Height="256">
+        <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center"/>
+        <ListView Grid.Row="3" Height="256" HorizontalAlignment="Center">
             <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -89,7 +89,7 @@
             <TextBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
             <TextBox Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3"/>
 
-            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Grid.Row="4" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">
             <Button x:Uid="PayBills_Pay" Margin="8"/>

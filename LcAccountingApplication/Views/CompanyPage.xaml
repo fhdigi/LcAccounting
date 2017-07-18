@@ -24,8 +24,11 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <StackPanel>
+                <Frame x:Name="companyPagePopupFrame" Width="640" BorderThickness="2" Margin="12"/>
+            </StackPanel>
         </Grid>
-    
+        
         <!--  Adaptive triggers  -->
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
