@@ -34,24 +34,31 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "DateOfBirth")] public DateTime DateOfBirth { get; set; }
         [JsonProperty(PropertyName = "DateTermination")] public DateTime DateTermination { get; set; }
 
+        //For UI
+        public string DisplayName
+        {
+            get { return LastName + ", " + FirstName; }
+        }
+
+
         private static readonly IMobileServiceTable<Employee> BillsTable = App.MobileService.GetTable<Employee>();
 
-        public static async Task InsertBills(Employee employee)
+        public static async Task InsertEmployee(Employee employee)
         {
             await BillsTable.InsertAsync(employee);
         }
 
-        public static async Task UpdateBills(Employee employee)
+        public static async Task UpdateEmployee(Employee employee)
         {
             await BillsTable.UpdateAsync(employee);
 
         }
-        public static async Task DeleteBills(Employee employee)
+        public static async Task DeleteEmployee(Employee employee)
         {
             await BillsTable.DeleteAsync(employee);
         }
 
-        public static async Task<List<Employee>> BillsListing()
+        public static async Task<List<Employee>> EmployeeListing()
         {
             try
             {

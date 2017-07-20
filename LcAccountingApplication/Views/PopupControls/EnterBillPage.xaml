@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:LcAccountingApplication.Views.PopupControls"
+    xmlns:converters="using:LcAccountingApplication.Views.PopupControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -18,27 +19,28 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <converters:DateTimeConverter x:Key="DateConverter"/>
+        </Grid.Resources>
         <TextBlock x:Uid="EnterBill_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
-        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <!--
-            <ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Bind ViewModel.VendorList}" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex}" Margin="8,0" VerticalAlignment="Center"/>
-            -->
-            <Button Command="{x:Bind ViewModel.NavigateToAddVendorPageCommand}" Margin="8,0" x:Uid="EnterBill_AddVendor" />
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
+            <!--<ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Null}" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex}" Margin="8,0" VerticalAlignment="Center"/>-->
+            <Button Command="{x:Bind ViewModel.NavigateToAddVendorPageCommand}" Margin="8,0" x:Uid="EnterBill_AddVendor"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" Margin="0,8" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Margin="0,8" HorizontalAlignment="Left">
             <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.Amount}" Margin="8" x:Uid="EnterBill_Amount" VerticalAlignment="Center"/>
             <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.InvNumber}" Margin="8" x:Uid="EnterBill_InvoiceID" VerticalAlignment="Center"/>
             <!--
-            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.Received, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateRecieved" VerticalAlignment="Center"/>
-            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.DateDue, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateDue" VerticalAlignment="Center"/>
-            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.DateAnticipated, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_AnticipatedPayDate" VerticalAlignment="Center"/>
+            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.Received, Converter={StaticResource DateConverter}, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateRecieved" VerticalAlignment="Center"/>
+            <DatePicker Margin="8" x:Uid="EnterBill_DateDue" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateDue, Converter={StaticResource DateConverter}, Mode=TwoWay}"/>
+            <DatePicker Margin="8" x:Uid="EnterBill_AnticipatedPayDate" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateAnticipated, Converter={StaticResource DateConverter}, Mode=TwoWay}"/>
             -->
         </StackPanel>
-        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Left">
             <ComboBox x:Uid="EnterBill_ChartOfAccount" Margin="8,0" VerticalAlignment="Center"/>
             <Button Command="{x:Bind ViewModel.NavigateToAddAccountPageCommand}" Margin="8,0" x:Uid="EnterBill_AddAccount"/>
         </StackPanel>
-        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left">
             <Button Margin="8,0" x:Uid="EnterBill_SaveAndClose" VerticalAlignment="Center" Command="{x:Bind ViewModel.SaveAndCloseCommand}"/>
             <Button Margin="8,0" x:Uid="EnterBill_Cancel" VerticalAlignment="Center" Command="{x:Bind ViewModel.CancelCommand}"/>
         </StackPanel>

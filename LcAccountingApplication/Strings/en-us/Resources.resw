@@ -222,16 +222,16 @@
   <data name="PayBills_Amount.Text" xml:space="preserve">
     <value>Amount</value>
   </data>
-  <data name="PayBills_AmountToPay.Text" xml:space="preserve">
+  <data name="PayBills_AmountToPay.Header" xml:space="preserve">
     <value>Amount to Pay</value>
   </data>
   <data name="PayBills_Cancel.Content" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="PayBills_CheckID.Text" xml:space="preserve">
+  <data name="PayBills_CheckID.Header" xml:space="preserve">
     <value>Check #</value>
   </data>
-  <data name="PayBills_Date.Text" xml:space="preserve">
+  <data name="PayBills_Date.Header" xml:space="preserve">
     <value>Date</value>
   </data>
   <data name="PayBills_DateDue.Text" xml:space="preserve">
@@ -243,7 +243,7 @@
   <data name="PayBills_EnteredIntoCheckLedger.Content" xml:space="preserve">
     <value>Check here if this bill has already beene entered into the check ledger manually</value>
   </data>
-  <data name="PayBills_Memo.Text" xml:space="preserve">
+  <data name="PayBills_Memo.Header" xml:space="preserve">
     <value>Note/Memo</value>
   </data>
   <data name="PayBills_Pay.Content" xml:space="preserve">
@@ -518,5 +518,17 @@
   </data>
   <data name="Payables_PayBills.Content" xml:space="preserve">
     <value>Pay Bills</value>
+  </data>
+  <data name="Employees_Add.Content" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Employees_Edit.Content" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Employees_EmployeeList.Header" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="Employees_Remove.Content" xml:space="preserve">
+    <value>Remove</value>
   </data>
 </root>

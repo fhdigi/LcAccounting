@@ -20,10 +20,17 @@ namespace LcAccountingApplication.ViewModels
         //PROPERTIES
         public ObservableCollection<Bills> BillsListing { get; set; }
         public int SelectedBillsListingIndex { get; set; }
-        public Bills SelectedAccountListing { get; set; }
+        public Bills SelectedBillsListing
+        {
+            get
+            {
+                if (IsAccountListingSelected && SelectedBillsListingIndex > -1) return BillsListing[SelectedBillsListingIndex];
+                else return null;
+            }
+        }
 
 
-        public Bills NewBillsBuffer; //Useed when creating a new accont (Discarded if Cancel, Added if Save)
+        public Bills NewBillsBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
         public bool IsAccountListingSelected
         {
             get
@@ -44,6 +51,7 @@ namespace LcAccountingApplication.ViewModels
         {
             Task.Run(SetBillsListing).Wait();
             SortBillsListing();
+            NewBillsBuffer = new Bills();
 
         }
         public void SortBillsListing()
@@ -65,22 +73,6 @@ namespace LcAccountingApplication.ViewModels
             }
 
         }
-
-    }
-
-    //For binding the DateTimeOffset value to the DateTime database value
-    public class DateTimeConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
-
 
     }
 }

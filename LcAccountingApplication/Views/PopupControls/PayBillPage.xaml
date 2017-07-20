@@ -5,6 +5,7 @@
     xmlns:local="using:LcAccountingApplication.Views.PopupControls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:LcAccountingApplication.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -22,12 +23,12 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock x:Uid="PayBills_Title" Style="{StaticResource HeaderTextBlockStyle}"/>
-        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+        <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
             <TextBlock x:Uid="PayBills_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <ComboBox Margin="8,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         </StackPanel>
-        <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center"/>
-        <ListView Grid.Row="3" Height="256" HorizontalAlignment="Center">
+        <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
+        <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.BillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex, Mode=TwoWay}">
             <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -43,7 +44,7 @@
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Bills">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="128"/>
@@ -52,9 +53,9 @@
                             <ColumnDefinition Width="auto"/>
                         </Grid.ColumnDefinitions>
                         <!--Date Recorded, Date Due, and Amount-->
-                        <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}"/>
-                        <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}"/>
-                        <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="0" Text="{x:Bind Received}" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="1" Text="{x:Bind DateDue}" Style="{StaticResource BodyTextBlockStyle}"/>
+                        <TextBlock Grid.Column="2" Text="{x:Bind Amount}" Style="{StaticResource BodyTextBlockStyle}"/>
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -65,10 +66,8 @@
             </ListView.ItemsPanel>
         </ListView>
 
-        <Grid Grid.Row="4" HorizontalAlignment="Center">
+        <Grid Grid.Row="4" HorizontalAlignment="Left">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -78,20 +77,15 @@
                 <ColumnDefinition Width="128"/>
                 <ColumnDefinition Width="128"/>
             </Grid.ColumnDefinitions>
-            
-            <TextBlock x:Uid="PayBills_AmountToPay" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
-            <TextBlock x:Uid="PayBills_CheckID" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
-            <TextBlock x:Uid="PayBills_Date" Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
-            <TextBlock x:Uid="PayBills_Memo" Grid.Column="0" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8,0"/>
 
-            <TextBox Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3"/>
+            <TextBox x:Uid="PayBills_AmountToPay" Text="" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox x:Uid="PayBills_CheckID" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox x:Uid="PayBills_Date" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
+            <TextBox x:Uid="PayBills_Memo" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3"/>
 
-            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Grid.Row="4" Grid.RowSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Margin="8" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
         </Grid>
-        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left">
             <Button x:Uid="PayBills_Pay" Margin="8"/>
             <Button x:Uid="PayBills_Cancel" Margin="8"/>
         </StackPanel>

@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:LcAccountingApplication.Models"
     mc:Ignorable="d">
 
     <Grid
@@ -25,8 +26,45 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <StackPanel>
+                <ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedIndex="{x:Bind ViewModel.SelectedEmployeeIndex}" SelectedItem="{Binding SelectedAccountListing, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Employee">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind DisplayName, Mode=OneWay}">
+                                    <!--Continue with more info later-->
+                                    <!--
+                                    <FlyoutBase.AttachedFlyout>
+                                        <Flyout>
+                                            <Grid Width="256" Height="Auto">
+                                                <StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind FirstName}"/>
+                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind MiddleInitial}"/>
+                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind MiddleInitial}"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Flyout>
+                                    </FlyoutBase.AttachedFlyout>
+                                    -->
+                                </TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}"/>
+                            <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}"/>
+                            <Button Margin="8" x:Uid="Employee_Add" Command="{x:Bind ViewModel.NewEmployeeCommand}"/>
+                        </StackPanel>
+                    </ListView.Footer>
+                </ListView>
+            </StackPanel>
         </Grid>
-
         <!--  Adaptive triggers  -->
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowStates">
