@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LcAccountingApplication.ViewModels;
+using LcAccountingApplication.ViewModels.PopupControls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,17 @@ namespace LcAccountingApplication.Views.PopupControls
     /// </summary>
     public sealed partial class EmployeeDataPage : Page
     {
+        EmployeesViewModel ViewModel;
+
         public EmployeeDataPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel = (EmployeesViewModel)e.Parameter;
+            DataContext = ViewModel;
         }
     }
 }

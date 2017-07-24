@@ -32,7 +32,8 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            
+            <RowDefinition Height="40"/>
+
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -47,7 +48,7 @@
 
         <TextBox Grid.Row="0"
                  Grid.Column="1"
-                 Margin="0,5,0,5" />
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.LastName, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="1"
                    Grid.Column="0"
@@ -56,7 +57,7 @@
 
         <TextBox Grid.Row="1"
                  Grid.Column="1"
-                 Margin="0,5,0,5" />
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.LastName, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="2"
                    Grid.Column="0"
@@ -65,16 +66,16 @@
 
         <TextBox Grid.Row="2"
                  Grid.Column="1" 
-                 Margin="0,5,0,5" />
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.MiddleInitial, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="3"
                    Grid.Column="0"
                    Text="Address"                   
-                   VerticalAlignment="Center" />
+                   VerticalAlignment="Center"/>
 
         <TextBox Grid.Row="3"
                  Grid.Column="1" 
-                 Margin="0,5,0,5" />
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.Address, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="4"
                    Grid.Column="0"
@@ -83,7 +84,7 @@
 
         <TextBox Grid.Row="4"
                  Grid.Column="1"
-                 Margin="0,5,0,5"/>
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.SocialSecurityNumber, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="5"
                    Grid.Column="0"
@@ -92,7 +93,7 @@
 
         <TextBox Grid.Row="5"
                  Grid.Column="1"
-                 Margin="0,5,0,5"/>
+                 Margin="0,5,0,5" Text="{x:Bind ViewModel.NewEmployeeBuffer.PhoneNumber, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="6"
                    Grid.Column="0"
@@ -100,15 +101,15 @@
                    Text="City"/>
         <TextBox Grid.Row="6"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Text="{x:Bind ViewModel.NewEmployeeBuffer.City, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="7"
                    Grid.Column="0"
                    VerticalAlignment="Center"
                    Text="State"/>
-        <ListBox Grid.Row="7"
+        <TextBox Grid.Row="7"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Text="{x:Bind ViewModel.NewEmployeeBuffer.State, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="8"
                    Grid.Column="0"
@@ -116,7 +117,7 @@
                    Text="Zip Code"/>
         <TextBox Grid.Row="8"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.ZipCode, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="9"
                    Grid.Column="0"
@@ -124,14 +125,14 @@
                    Text="Date Hired"/>
         <DatePicker Grid.Row="9"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Date="{x:Bind ViewModel.NewEmployeeBuffer.DateHired}"/>
         <TextBlock Grid.Row="10"
                    Grid.Column="0"
                    VerticalAlignment="Center"
                    Text="Hourly Rate"/>
         <TextBox Grid.Row="10"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Text="{x:Bind ViewModel.NewEmployeeBuffer.PayRate, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="11"
                    Grid.Column="0"
@@ -139,15 +140,15 @@
                    Text="Additional Pay"/>
         <TextBox Grid.Row="11"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Text="{x:Bind ViewModel.NewEmployeeBuffer.AdditionalPay, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="12"
                    Grid.Column="0"
                    VerticalAlignment="Center"
-                   Text=" Employee Type"/>
+                   Text=" Employee Type" />
         <TextBox Grid.Row="12"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Text="{x:Bind ViewModel.NewEmployeeBuffer.PayType, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="13"
                    Grid.Column="0"
@@ -155,7 +156,7 @@
                    Text="D.O.B"/>
         <DatePicker Grid.Row="13"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Date="{x:Bind ViewModel.NewEmployeeBuffer.DateOfBirth, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="14"
                    Grid.Column="0"
@@ -163,7 +164,7 @@
                    Text="This Employee is Inactive"/>
         <CheckBox Grid.Row="14"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" IsChecked="{x:Bind ViewModel.NewEmployeeBuffer.Inactive, Mode=TwoWay}"/>
 
 
         <TextBlock Grid.Row="15"
@@ -172,7 +173,7 @@
                    Text="Termination Date"/>
         <DatePicker Grid.Row="15"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center" Date="{x:Bind ViewModel.NewEmployeeBuffer.DateTermination, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="16"
                    Grid.Column="0"
@@ -180,23 +181,25 @@
                    Text="Emergency Contact"/>
         <TextBox Grid.Row="16"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.EmergencyContact, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="17"
                    Grid.Column="0"
                    VerticalAlignment="Center"
                    Text="Emergency Phone #"/>
+        
         <TextBox Grid.Row="17"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.EmergencyPhone, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="18"
                    Grid.Column="0"
                    VerticalAlignment="Center"
                    Text="Relationship"/>
+        
         <TextBox Grid.Row="18"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.EmergencyRelationship, Mode=TwoWay}"/>
 
         <TextBlock Grid.Row="19"
                    Grid.Column="0"
@@ -204,27 +207,18 @@
                    Text="Medical Conditions"/>
         <TextBox Grid.Row="19"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
-
-
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.MedicalCondition, Mode=TwoWay}"/>
+        
         <TextBlock Grid.Row="20"
                    Grid.Column="0"
                    VerticalAlignment="Center"
                    Text="Notes"/>
         <TextBox Grid.Row="20"
                  Grid.Column="1"
-                 VerticalAlignment="Center"/>
+                 VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.Notes, Mode=TwoWay}"/>
 
-
-
-
-
-
-
-
-
-
-
+        <Button Grid.Column="0" Grid.Row="21" Content="Add" Command="{x:Bind ViewModel.SaveEditedEmployeeCommand}"/>
+        <Button Grid.Column="1" Grid.Row="21" Content="Cancel" Command="{x:Bind ViewModel.CancelCommand}"/>
     </Grid>
 
     <!--

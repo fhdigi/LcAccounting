@@ -21,7 +21,7 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "ZipCode")] public string ZipCode { get; set; }
         [JsonProperty(PropertyName = "PhoneNumber")] public string PhoneNumber { get; set; }
         [JsonProperty(PropertyName = "SocialSecurityNumber")] public string SocialSecurityNumber { get; set; }
-        [JsonProperty(PropertyName = "DateHired")] public DateTime DateHired { get; set; }
+        [JsonProperty(PropertyName = "DateHired")] public DateTimeOffset DateHired { get; set; }
         [JsonProperty(PropertyName = "PayType")] public string PayType { get; set; }
         [JsonProperty(PropertyName = "PayRate")] public double PayRate { get; set; }
         [JsonProperty(PropertyName = "AdditionalPay")] public double AdditionalPay { get; set; }
@@ -30,9 +30,9 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "EmergencyPhone")] public string EmergencyPhone { get; set; }
         [JsonProperty(PropertyName = "MedicalCondition")] public string MedicalCondition { get; set; }
         [JsonProperty(PropertyName = "Notes")] public string Notes { get; set; }
-        [JsonProperty(PropertyName = "Inactive")] public bool Inactive { get; set; }
-        [JsonProperty(PropertyName = "DateOfBirth")] public DateTime DateOfBirth { get; set; }
-        [JsonProperty(PropertyName = "DateTermination")] public DateTime DateTermination { get; set; }
+        [JsonProperty(PropertyName = "Inactive")] public bool? Inactive { get; set; }
+        [JsonProperty(PropertyName = "DateOfBirth")] public DateTimeOffset DateOfBirth { get; set; }
+        [JsonProperty(PropertyName = "DateTermination")] public DateTimeOffset DateTermination { get; set; }
 
         //For UI
         public string DisplayName

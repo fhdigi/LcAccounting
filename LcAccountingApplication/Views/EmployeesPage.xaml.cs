@@ -23,6 +23,8 @@ namespace LcAccountingApplication.Views
                 EditEmployeeCommand = new RelayCommand(() =>
                 {
                     ViewModel.IsNewEmployee = false;
+                    ViewModel.NewEmployeeBuffer = ViewModel.SelectedEmployee;
+                    Frame.Navigate(typeof(EmployeeDataPage), this.ViewModel);
 
                 }),
                 SaveEditedEmployeeCommand = new RelayCommand(async () =>
@@ -33,9 +35,16 @@ namespace LcAccountingApplication.Views
                 }),
                 RemoveEmployeeCommand = new RelayCommand(async () =>
                 {
-                    await Employee.DeleteEmployee(ViewModel.SelectedEmployeeListing);
+                    if (ViewModel.IsEmployeeSelected) await Employee.DeleteEmployee(ViewModel.SelectedEmployee);
+                }),
+                CancelCommand = new RelayCommand(() =>
+                {
+                    Frame.GoBack();
                 })
+                
             };
+
+            DataContext = ViewModel;
             InitializeComponent();
         }
     }

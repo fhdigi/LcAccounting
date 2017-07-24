@@ -27,7 +27,7 @@
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
             <StackPanel>
-                <ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedIndex="{x:Bind ViewModel.SelectedEmployeeIndex}" SelectedItem="{Binding SelectedAccountListing, Mode=TwoWay}">
+                <ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedItem="{Binding ViewModel.SelectedEmployee, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="models:Employee">
                             <Grid>
@@ -57,9 +57,9 @@
                     </ListView.ItemTemplate>
                     <ListView.Footer>
                         <StackPanel Orientation="Horizontal">
-                            <Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}"/>
-                            <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}"/>
-                            <Button Margin="8" x:Uid="Employee_Add" Command="{x:Bind ViewModel.NewEmployeeCommand}"/>
+                            <Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>
+                            <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>
+                            <Button Margin="8" x:Uid="Employees_Add" Command="{x:Bind ViewModel.NewEmployeeCommand}"/>
                         </StackPanel>
                     </ListView.Footer>
                 </ListView>

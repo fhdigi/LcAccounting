@@ -143,7 +143,6 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\PayablesViewModel.cs" />
     <Compile Include="ViewModels\PopupControls\ChartOfAccountViewModel.cs" />
-    <Compile Include="ViewModels\PopupControls\EmployeeDataViewModel.cs" />
     <Compile Include="ViewModels\ReceivablesViewModel.cs" />
     <Compile Include="ViewModels\ShellNavigationItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
