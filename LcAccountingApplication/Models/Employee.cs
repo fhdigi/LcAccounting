@@ -41,34 +41,28 @@ namespace LcAccountingApplication.Models
         }
 
 
-        private static readonly IMobileServiceTable<Employee> BillsTable = App.MobileService.GetTable<Employee>();
+        private static readonly IMobileServiceTable<Employee> EmployeesTable = App.MobileService.GetTable<Employee>();
 
         public static async Task InsertEmployee(Employee employee)
         {
-            await BillsTable.InsertAsync(employee);
+            await EmployeesTable.InsertAsync(employee);
         }
 
         public static async Task UpdateEmployee(Employee employee)
         {
-            await BillsTable.UpdateAsync(employee);
+            await EmployeesTable.UpdateAsync(employee);
 
         }
         public static async Task DeleteEmployee(Employee employee)
         {
-            await BillsTable.DeleteAsync(employee);
+            await EmployeesTable.DeleteAsync(employee);
         }
 
         public static async Task<List<Employee>> EmployeeListing()
         {
-            try
-            {
-                var listing = await BillsTable.ToListAsync();
-                return listing;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+
+            List<Employee> listing = await EmployeesTable.ToListAsync();
+            return listing;
         }
     }
 }

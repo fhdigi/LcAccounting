@@ -5,6 +5,7 @@ using PropertyChanged;
 using System.Collections.ObjectModel;
 using LcAccountingApplication.Models;
 using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace LcAccountingApplication.ViewModels
 {
@@ -33,7 +34,11 @@ namespace LcAccountingApplication.ViewModels
 
         public EmployeesViewModel()
         {
-            
+            Task.Run(SetEmployeeListing);
+        }
+        private async Task SetEmployeeListing()
+        {
+            EmployeeListing = new ObservableCollection<Employee>(await Employee.EmployeeListing());
         }
     }
 }
