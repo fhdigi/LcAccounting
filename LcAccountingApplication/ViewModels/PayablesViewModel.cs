@@ -19,23 +19,14 @@ namespace LcAccountingApplication.ViewModels
     {
         //PROPERTIES
         public ObservableCollection<Bills> BillsListing { get; set; }
-        public int SelectedBillsListingIndex { get; set; }
-        public Bills SelectedBillsListing
-        {
-            get
-            {
-                if (IsAccountListingSelected && SelectedBillsListingIndex > -1) return BillsListing[SelectedBillsListingIndex];
-                else return null;
-            }
-        }
-
+        public Bills SelectedBillsListing { get; set; }
 
         public Bills NewBillsBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
         public bool IsAccountListingSelected
         {
             get
             {
-                return SelectedBillsListingIndex > -1;
+                return SelectedBillsListing != null;
             }
         }
 

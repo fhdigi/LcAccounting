@@ -28,7 +28,7 @@
             <ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
         </StackPanel>
         <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
-        <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.BillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex, Mode=TwoWay}">
+        <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.BillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedItem="{Binding ViewModel.SelectedBillsListing, Mode=TwoWay}">
             <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
