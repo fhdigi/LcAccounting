@@ -14,7 +14,7 @@ namespace LcAccountingApplication.ViewModels
     {
         public ObservableCollection<Employee> EmployeeListing { get; set; }
 
-        public Employee SelectedEmployee { get; set; }
+        public Employee SelectedEmployee { get; set; } //NOT currently responding to change in selected item
 
         public bool IsNewEmployee; //True if creating a chart of account. False is editing one.
         public Employee NewEmployeeBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
@@ -34,7 +34,7 @@ namespace LcAccountingApplication.ViewModels
 
         public EmployeesViewModel()
         {
-            Task.Run(SetEmployeeListing);
+            Task.Run(SetEmployeeListing).Wait();
         }
         private async Task SetEmployeeListing()
         {

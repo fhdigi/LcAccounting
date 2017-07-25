@@ -10,6 +10,8 @@ namespace LcAccountingApplication.Models
 {
     public class Employee
     {
+        public string Id { get; set; }
+
         [JsonProperty(PropertyName = "LastName")] public string LastName { get; set; }
         [JsonProperty(PropertyName = "FirstName")] public string FirstName { get; set; }
         [JsonProperty(PropertyName = "MiddleInitial")] public string MiddleInitial { get; set; }
@@ -60,9 +62,36 @@ namespace LcAccountingApplication.Models
 
         public static async Task<List<Employee>> EmployeeListing()
         {
-
             List<Employee> listing = await EmployeesTable.ToListAsync();
             return listing;
+        }
+
+        //For initializing values with a new employee
+        public Employee()
+        {
+            LastName = "";
+            FirstName = "";
+            MiddleInitial = "";
+            PinNumber = 0;
+            IsAdmin = false;
+            Address = "";
+            City = "";
+            State = "";
+            ZipCode ="";
+            PhoneNumber = "";
+            SocialSecurityNumber = "";
+            DateHired = DateTimeOffset.Now;
+            PayType = "";
+            PayRate = 10.40;
+            AdditionalPay = 0.00;
+            EmergencyContact = "";
+            EmergencyRelationship = "";
+            EmergencyPhone = "";
+            MedicalCondition = "";
+            Notes = "";
+            Inactive = false;
+            DateOfBirth = new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
+            DateTermination = DateTimeOffset.Now;
         }
     }
 }
