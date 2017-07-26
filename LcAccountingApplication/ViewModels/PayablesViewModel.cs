@@ -43,7 +43,6 @@ namespace LcAccountingApplication.ViewModels
             Task.Run(SetBillsListing).Wait();
             SortBillsListing();
             NewBillsBuffer = new Bills();
-
         }
         public void SortBillsListing()
         {
@@ -64,6 +63,5 @@ namespace LcAccountingApplication.ViewModels
             }
 
         }
-
     }
 }

@@ -39,53 +39,71 @@
             </Grid.ColumnDefinitions>
             <ScrollViewer HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <VariableSizedWrapGrid x:Name="hubVariableSizedWrapGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
+                    <Grid Height="350" Width="275" Background="{ThemeResource SystemControlBackgroundAccentBrush}" Margin="16">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="8"/>
                             <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                        <StackPanel>
-                            <!--Content-->
+                        <TextBlock Grid.Row="0" Margin="8" Text="Bills" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}" Foreground="White"/>
+                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="2" Fill="White"/>
+                        <StackPanel Grid.Row="2">
+                            <TextBlock Text="Unpaid Bills" Style="{StaticResource BodyTextBlockStyle}" Foreground="White"  HorizontalAlignment="Center"/>
+                            <ListView>
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="3"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" Text="DATE"/>
+                                            <!--TODO: Add "click" commmand to take one to the bill selected-->
+                                            <TextBlock Grid.Column="0" Text="FIRM"/>
+                                            <TextBlock Grid.Column="0" Text="AMOUNT"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </StackPanel>
                     </Grid>
-                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
+                    <Grid Height="350" Width="275" Background="{ThemeResource SystemControlBackgroundAccentBrush}" Margin="16">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
                             <RowDefinition Height="8"/>
                             <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                        <StackPanel>
-                            <!--Content-->
-                        </StackPanel>
-                    </Grid>
-                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="8"/>
-                            <RowDefinition Height="4*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                        <StackPanel>
-                            <!--Content-->
-                        </StackPanel>
-                    </Grid>
-                    <Grid Height="300" Width="250" Background="LightGray" Margin="16">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="8"/>
-                            <RowDefinition Height="4*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock Grid.Row="0" Margin="8" Text="Title" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
-                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="1" Fill="Black"/>
-                        <StackPanel>
-                            <!--Content-->
-                        </StackPanel>
+                        <TextBlock Grid.Row="0" Margin="8" Text="Funds" Foreground="White" TextAlignment="Center" FontWeight="SemiBold" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                        <Rectangle Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="2" Fill="White"/>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Column="0" Text="Incoming" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Foreground="White"/>
+                            <TextBlock Grid.Column="1" Text="Outgoing" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" Foreground="White"/>
+                            <ListView Grid.Row="1" Grid.Column="0">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Grid.Row="0" Text="AMOUNT" Style="{StaticResource BaseTextBlockStyle}"/>
+                                            <TextBlock Grid.Row="1" Text="SOURCE" Style="{StaticResource BaseTextBlockStyle}"/>
+                                            <!--TODO: Add "click" commmand to take one to the item slelected-->
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
                     </Grid>
                 </VariableSizedWrapGrid>
             </ScrollViewer>

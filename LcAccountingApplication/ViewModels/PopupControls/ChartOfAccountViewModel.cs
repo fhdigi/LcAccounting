@@ -17,20 +17,13 @@ namespace LcAccountingApplication.ViewModels.PopupControls
     {
         //PROPERTIES
         public ObservableCollection<ChartOfAccount> ChartOfAccountListing { get; set; }
-        public int SelectedAccountListingIndex { get; set; }
-        public int SelectedGroupingIndex { get; set; }
+        public int SelectedGrouping { get; set; }
         public ChartOfAccount SelectedAccountListing { get; set; }
 
 
         public ChartOfAccount NewAccountBuffer; //Useed when creating a new accont (Discarded if Cancel, Added if Save)
         public bool IsNewAccount; //True if creating a chart of account. False is editing one.
-        public bool IsAccountListingSelected
-        {
-            get
-            {
-                return SelectedAccountListingIndex > -1;
-            }
-        }
+        public bool IsAccountListingSelected { get; set; }
 
         //COMMANDS
         public ICommand EditSelectedAccountCommand; //Defined in code-behind

@@ -44,7 +44,7 @@
                                                     <StackPanel Orientation="Horizontal">
                                                         <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind FirstName}"/>
                                                         <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind MiddleInitial}"/>
-                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind MiddleInitial}"/>
+                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind LastName}"/>
                                                     </StackPanel>
                                                 </StackPanel>
                                             </Grid>
