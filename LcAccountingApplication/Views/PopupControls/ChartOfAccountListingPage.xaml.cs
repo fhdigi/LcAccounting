@@ -48,6 +48,8 @@ namespace LcAccountingApplication.Views.PopupControls
                 }),
                 SaveEditedAccountCommand = new RelayCommand(async () =>
                 {
+
+                    if(ViewModel.NewAccountBuffer.AccountName != null && ViewModel.NewAccountBuffer.AccountNumber != null) //TODO: Fix comboBox and add code here
                     if (ViewModel.IsNewAccount) await ChartOfAccount.InsertChartOfAccount(ViewModel.NewAccountBuffer);
                     else await ChartOfAccount.UpdateChartOfAccount(ViewModel.NewAccountBuffer);
                     ViewModel.SortAccountListings();

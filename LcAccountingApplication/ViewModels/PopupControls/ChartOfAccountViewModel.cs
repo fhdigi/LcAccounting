@@ -17,9 +17,37 @@ namespace LcAccountingApplication.ViewModels.PopupControls
     {
         //PROPERTIES
         public ObservableCollection<ChartOfAccount> ChartOfAccountListing { get; set; }
-        public int SelectedGrouping { get; set; }
         public ChartOfAccount SelectedAccountListing { get; set; }
+        public int SelectedGroupingIndex
+        {
+            set
+            {
+                switch(value)
+                {
+                    default: break;
+                    case 0:
+                        NewAccountBuffer.Grouping = AccountTypes.Asset;
+                        break;
+                    case 1:
+                        NewAccountBuffer.Grouping = AccountTypes.Equity;
+                        break;
+                    case 2:
+                        NewAccountBuffer.Grouping = AccountTypes.Expense;
+                        break;
+                    case 3:
+                        NewAccountBuffer.Grouping = AccountTypes.Income;
+                        break;
+                    case 4:
+                        NewAccountBuffer.Grouping = AccountTypes.Liability;
+                        break;
+                }
+            }
+        }
 
+        public List<string> Groupings
+        {
+            get { return Enum.GetNames(typeof(AccountTypes)).ToList<string>(); }
+        }
 
         public ChartOfAccount NewAccountBuffer; //Useed when creating a new accont (Discarded if Cancel, Added if Save)
         public bool IsNewAccount; //True if creating a chart of account. False is editing one.
@@ -52,7 +80,14 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public void SortAccountListings()
         {
             List<ChartOfAccount> sortedList = ChartOfAccountListing.ToList<ChartOfAccount>();
-            sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
+            try
+            {
+                sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
+            }
+            catch (NullReferenceException e)
+            {
+                sortedList = ChartOfAccountListing.ToList<ChartOfAccount>(); //Sort failure. Return original list
+            }
             ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
             Task.Run(ChartOfAccount.ChartOfAccountListing).Wait();
         }
