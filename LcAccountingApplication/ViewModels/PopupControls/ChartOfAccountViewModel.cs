@@ -52,7 +52,7 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public void SortAccountListings()
         {
             List<ChartOfAccount> sortedList = ChartOfAccountListing.ToList<ChartOfAccount>();
-                sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
+            sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
             ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
             Task.Run(ChartOfAccount.ChartOfAccountListing).Wait();
         }
