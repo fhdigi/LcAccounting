@@ -5,6 +5,7 @@ using LcAccountingApplication.Helpers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
+using Windows.UI;
 
 namespace LcAccountingApplication.ViewModels
 {
@@ -41,17 +42,20 @@ namespace LcAccountingApplication.ViewModels
             {
                 Set(ref _isSelected, value);
                 SelectedVis = value ? Visibility.Visible : Visibility.Collapsed;
+                //SelectedForeground = value
+                //    ? Application.Current.Resources["SystemControlForegroundAccentBrush"] as SolidColorBrush
+                //    : GetStandardTextColorBrush();
                 SelectedForeground = value
-                    ? Application.Current.Resources["SystemControlForegroundAccentBrush"] as SolidColorBrush
+                    ? new SolidColorBrush(Color.FromArgb(255, 63, 63, 63))
                     : GetStandardTextColorBrush();
             }
         }
 
         private SolidColorBrush GetStandardTextColorBrush()
         {
-            var brush = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as SolidColorBrush;
-
-            return brush;
+            //var brush = Application.Current.Resources["SystemControlForegroundBaseHighBrush"] as SolidColorBrush;
+            Color c = new Color();
+            return new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
         }
 
         private ShellNavigationItem(string name, Symbol symbol, Type pageType)

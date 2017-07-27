@@ -13,27 +13,27 @@
         <DataTemplate x:Key="NavigationMenuItemDataTemplate" x:DataType="vm:ShellNavigationItem">
             <Grid Width="320" Height="40">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="48"/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="48" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Rectangle
                         Width="6"
                         Height="24"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center"
-                        Fill="DarkCyan"
-                        Visibility="{x:Bind SelectedVis, Mode=OneWay}" />
+                        Fill="{ThemeResource SystemControlBackgroundAccentBrush}"
+                        Visibility="{x:Bind SelectedVis, Mode=OneWay}"/>
                 <FontIcon
                         VerticalAlignment="Center"
                         Margin="16,12"
                         FontSize="16"
-                        Foreground="White"
-                        Glyph="{x:Bind SymbolAsChar}" />
+                        Foreground="{x:Bind SelectedForeground, Mode=OneWay}"
+                        Glyph="{x:Bind SymbolAsChar}"/>
                 <TextBlock
                         Grid.Column="1"
                         Margin="0,9,0,11"
                         VerticalAlignment="Center"
-                        Foreground="White"
+                        Foreground="{x:Bind SelectedForeground, Mode=OneWay}"
                         Text="{x:Bind Label}"
                         Style="{StaticResource BodyTextBlockStyle}"
                         TextTrimming="None" />
@@ -52,10 +52,10 @@
                                     To="1"
                                     Duration="0" />
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Cyan" />
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListLowBrush}" />
                                 </ObjectAnimationUsingKeyFrames>
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="Cyan" />
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
                                 </ObjectAnimationUsingKeyFrames>
                                 <PointerUpThemeAnimation Storyboard.TargetName="ContentPresenter" />
                             </Storyboard>
@@ -68,10 +68,10 @@
                                     To="1"
                                     Duration="0" />
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderBackground" Storyboard.TargetProperty="Fill">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="DarkCyan" />
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightListMediumBrush}" />
                                 </ObjectAnimationUsingKeyFrames>
                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
-                                    <DiscreteObjectKeyFrame KeyTime="0" Value="DarkCyan}" />
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightAltBaseHighBrush}" />
                                 </ObjectAnimationUsingKeyFrames>
                                 <PointerDownThemeAnimation TargetName="ContentPresenter" />
                             </Storyboard>
@@ -201,7 +201,7 @@
     <controls:HamburgerMenu
             x:Name="NavigationMenu"
             DisplayMode="{x:Bind ViewModel.DisplayMode, Mode=OneWay}"
-            PaneBackground="Black"
+            PaneBackground="{ThemeResource SystemControlBackgroundAccentBrush}"
             IsPaneOpen="{x:Bind ViewModel.IsPaneOpen, Mode=TwoWay}"
             ItemTemplate="{StaticResource NavigationMenuItemDataTemplate}"
             ItemsSource="{x:Bind ViewModel.PrimaryItems}"
@@ -217,7 +217,7 @@
                 <ic:InvokeCommandAction Command="{x:Bind ViewModel.ItemSelectedCommand}" />
             </ic:EventTriggerBehavior>
         </i:Interaction.Behaviors>
-        <Grid Background="Black">
+        <Grid Background="{ThemeResource SystemControlBackgroundAccentBrush}">
             <Frame x:Name="shellFrame"/>
         </Grid>
         <VisualStateManager.VisualStateGroups>

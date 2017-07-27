@@ -1,9 +1,5 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Color x:Key="ShellLightAccentColor">Cyan</Color>
-    <Color x:Key="ShellDarkAccentColor">DarkBlue</Color>
-
-    <Color x:Key="ShellBackGroundColor">MintCream</Color>
+    
 </ResourceDictionary>

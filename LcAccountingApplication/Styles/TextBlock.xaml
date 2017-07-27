@@ -16,6 +16,7 @@
         <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
         <Setter Property="TextWrapping" Value="NoWrap"/>
         <Setter Property="Margin" Value="{StaticResource PageTitleMargin}"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 
     <Style x:Key="BodyTextStyle" TargetType="TextBlock">
@@ -23,6 +24,7 @@
         <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
         <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
         <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 
     <!--List texts-->
@@ -31,6 +33,7 @@
         <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
         <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
         <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 
     <Style x:Key="ListSubTitleStyle" TargetType="TextBlock">
@@ -39,6 +42,7 @@
         <Setter Property="FontSize" Value="{StaticResource MediumFontSize}"/>
         <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
         <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 
 </ResourceDictionary>
