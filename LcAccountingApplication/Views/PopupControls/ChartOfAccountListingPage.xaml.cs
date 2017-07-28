@@ -38,7 +38,7 @@ namespace LcAccountingApplication.Views.PopupControls
                 }),
                 ClosePageCommand = new RelayCommand(() =>
                 {
-                    //Frame.GoBack();
+                    Frame.GoBack();
                 }),
                 AddNewAccountCommand = new RelayCommand(() =>
                 {

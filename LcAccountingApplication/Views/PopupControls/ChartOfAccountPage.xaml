@@ -27,7 +27,7 @@
 
         <TextBox Grid.Row="1" x:Uid="ChartOfAccount_AccountNumber" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewAccountBuffer.AccountNumber, Mode=TwoWay}" />
         <TextBox Grid.Row="2" x:Uid="ChartOfAccount_AccountName" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewAccountBuffer.AccountName, Mode=TwoWay}"/>
-        <ComboBox Grid.Row="3" x:Uid="ChartOfAccount_AccountType" Grid.Column="0" Margin="8" ItemsSource="{x:Bind ViewModel.Groupings}" SelectedIndex="{Binding ViewModel.SelectedGroupingIndex, Mode=TwoWay}"/>
+        <ComboBox Grid.Row="3" x:Uid="ChartOfAccount_AccountType" Grid.Column="0" Margin="8" ItemsSource="{x:Bind ViewModel.Groupings}" SelectedIndex="{x:Bind ViewModel.SelectedGroupingIndex, Mode=TwoWay}"/>
 
 
         <Button x:Uid="ChartOfAccount_Save" Grid.Column="1" Grid.Row="1" Command="{x:Bind ViewModel.SaveEditedAccountCommand}"/>

@@ -37,11 +37,11 @@ namespace LcAccountingApplication.Models.PopupControls
             await CoaTable.DeleteAsync(coaItem);
         }
 
-        public static async Task<List<ChartOfAccount>> ChartOfAccountListing()
+        public static async Task<ObservableCollection<ChartOfAccount>> ChartOfAccountListing()
         {
             try
             {
-                var listing = await CoaTable.ToListAsync();
+                var listing = new ObservableCollection<ChartOfAccount>(await CoaTable.ToListAsync());
                 return listing;
             }
             catch (MobileServiceInvalidOperationException e)

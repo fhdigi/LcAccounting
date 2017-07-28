@@ -20,6 +20,11 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public ChartOfAccount SelectedAccountListing { get; set; }
         public int SelectedGroupingIndex
         {
+            get
+            {
+                return (int)NewAccountBuffer.Grouping;
+            }
+
             set
             {
                 switch(value)
@@ -29,16 +34,16 @@ namespace LcAccountingApplication.ViewModels.PopupControls
                         NewAccountBuffer.Grouping = AccountTypes.Asset;
                         break;
                     case 1:
-                        NewAccountBuffer.Grouping = AccountTypes.Equity;
+                        NewAccountBuffer.Grouping = AccountTypes.Liability;
                         break;
                     case 2:
-                        NewAccountBuffer.Grouping = AccountTypes.Expense;
+                        NewAccountBuffer.Grouping = AccountTypes.Equity;
                         break;
                     case 3:
                         NewAccountBuffer.Grouping = AccountTypes.Income;
                         break;
                     case 4:
-                        NewAccountBuffer.Grouping = AccountTypes.Liability;
+                        NewAccountBuffer.Grouping = AccountTypes.Expense;
                         break;
                 }
             }
@@ -80,20 +85,13 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         public void SortAccountListings()
         {
             List<ChartOfAccount> sortedList = ChartOfAccountListing.ToList<ChartOfAccount>();
-            try
-            {
-                sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
-            }
-            catch (NullReferenceException e)
-            {
-                sortedList = ChartOfAccountListing.ToList<ChartOfAccount>(); //Sort failure. Return original list
-            }
-            ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
+            sortedList.Sort((x, y) => x.AccountNumber.CompareTo(y.AccountNumber));
+            //ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
             Task.Run(ChartOfAccount.ChartOfAccountListing).Wait();
         }
         private async Task SetAccountListing()
         {
-            ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(await ChartOfAccount.ChartOfAccountListing());
+            ChartOfAccountListing = await ChartOfAccount.ChartOfAccountListing();
         }
     }
 }
