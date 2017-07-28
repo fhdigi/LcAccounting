@@ -37,8 +37,9 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="192"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0"
@@ -217,7 +218,7 @@
                  Grid.Column="1"
                  VerticalAlignment="Center"  Text="{x:Bind ViewModel.NewEmployeeBuffer.Notes, Mode=TwoWay}"/>
 
-        <Button Grid.Column="0" Grid.Row="21" Content="Add" Command="{x:Bind ViewModel.SaveEditedEmployeeCommand}"/>
+        <Button Grid.Column="0" Grid.Row="21" Content="Save" Command="{x:Bind ViewModel.SaveEditedEmployeeCommand}"/>
         <Button Grid.Column="1" Grid.Row="21" Content="Cancel" Command="{x:Bind ViewModel.CancelCommand}"/>
     </Grid>
 

@@ -64,7 +64,6 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
             <Button x:Uid="ChartOfAccountListing_AddNewAccount" Margin="8" Command="{x:Bind ViewModel.AddNewAccountCommand}"/>
-            <Button x:Uid="ChartOfAccountListing_Close" Margin="8" Command="{x:Bind ViewModel.ClosePageCommand}"/>
         </StackPanel>
     </Grid>
 </Page>
