@@ -7,6 +7,9 @@
     xmlns:models="using:LcAccountingApplication.Models"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <!--<models:ObjectToEmployeeConverter x:Key="ObjectToEmployeeConverter"/>-->
+    </Page.Resources>
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -27,7 +30,8 @@
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
             <StackPanel>
-                <ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedItem="{Binding ViewModel.SelectedEmployee, Mode=TwoWay}">
+                <ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectionChanged="ListView_SelectionChanged">
+                <!--<ListView ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedItem="{x:Bind ViewModel.SelectedEmployee, Mode=TwoWay, Converter={StaticResource ObjectToEmployeeConverter}}">-->
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="models:Employee">
                             <Grid>
@@ -35,34 +39,16 @@
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind DisplayName, Mode=OneWay}">
-                                    <!--Continue with more info later-->
-                                    <!--
-                                    <FlyoutBase.AttachedFlyout>
-                                        <Flyout>
-                                            <Grid Width="256" Height="Auto">
-                                                <StackPanel>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind FirstName}"/>
-                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind MiddleInitial}"/>
-                                                        <TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{x:Bind LastName}"/>
-                                                    </StackPanel>
-                                                </StackPanel>
-                                            </Grid>
-                                        </Flyout>
-                                    </FlyoutBase.AttachedFlyout>
-                                    -->
                                 </TextBlock>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     <ListView.Footer>
                         <StackPanel Orientation="Horizontal">
-                            <Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}"/>
-                            <!--<Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>-->
+                            <Button Margin="8" x:Uid="Employees_Edit" Command="{x:Bind ViewModel.EditEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>
 
-                            <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}"/>
-                            <!--<Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>-->
-                            
+                            <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>
+
                             <Button Margin="8" x:Uid="Employees_Add" Command="{x:Bind ViewModel.NewEmployeeCommand}"/>
                         </StackPanel>
                     </ListView.Footer>

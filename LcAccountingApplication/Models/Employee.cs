@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
+using Windows.UI.Xaml.Data;
 
 namespace LcAccountingApplication.Models
 {
@@ -102,4 +103,17 @@ namespace LcAccountingApplication.Models
             DateTermination = DateTimeOffset.Now;
         }
     }
+    //public class ObjectToEmployeeConverter : IValueConverter
+    //{
+    //    public object Convert(object value, Type targetType, object parameter, string language)
+    //    {
+    //        return value as Employee; //No data
+    //    }
+
+    //    public object ConvertBack(object value, Type targetType, object parameter, string language)
+    //    {
+    //        return value as object; //Data loss
+    //    }
+    //}
+
 }

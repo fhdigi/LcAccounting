@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace LcAccountingApplication.ViewModels
 {
     [AddINotifyPropertyChangedInterface]
-    public class EmployeesViewModel : Observable
+    public class EmployeesViewModel
     {
         public ObservableCollection<Employee> EmployeeListing { get; set; }
 

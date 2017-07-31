@@ -47,5 +47,10 @@ namespace LcAccountingApplication.Views
             DataContext = ViewModel;
             InitializeComponent();
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.SelectedEmployee = ((ListView)sender).SelectedItem as Employee;
+        }
     }
 }
