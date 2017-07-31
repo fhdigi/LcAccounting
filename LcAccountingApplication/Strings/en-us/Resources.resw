@@ -241,7 +241,7 @@
     <value>Date Rec.</value>
   </data>
   <data name="PayBills_EnteredIntoCheckLedger.Content" xml:space="preserve">
-    <value>Check here if this bill has already beene entered into the check ledger manually</value>
+    <value>Check here if this bill has already been entered into the check ledger manually</value>
   </data>
   <data name="PayBills_Memo.Header" xml:space="preserve">
     <value>Note/Memo</value>
@@ -252,7 +252,7 @@
   <data name="PayBills_SelectBills.Text" xml:space="preserve">
     <value>Select Bill(s) to Pay</value>
   </data>
-  <data name="PayBills_Tiitle.Text" xml:space="preserve">
+  <data name="PayBills_Title.Text" xml:space="preserve">
     <value>Pay Bills</value>
   </data>
   <data name="PayBills_Vendor.Text" xml:space="preserve">

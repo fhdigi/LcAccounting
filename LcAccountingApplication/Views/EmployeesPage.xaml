@@ -62,7 +62,7 @@
 
                             <Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}"/>
                             <!--<Button Margin="8" x:Uid="Employees_Remove" Command="{x:Bind ViewModel.RemoveEmployeeCommand}" IsEnabled="{x:Bind ViewModel.IsEmployeeSelected}"/>-->
-
+                            
                             <Button Margin="8" x:Uid="Employees_Add" Command="{x:Bind ViewModel.NewEmployeeCommand}"/>
                         </StackPanel>
                     </ListView.Footer>

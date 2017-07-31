@@ -38,7 +38,7 @@ namespace LcAccountingApplication.ViewModels
         }
         private async Task SetEmployeeListing()
         {
-            EmployeeListing = new ObservableCollection<Employee>(await Employee.EmployeeListing());
+            EmployeeListing = await Employee.EmployeeListing();
         }
     }
 }

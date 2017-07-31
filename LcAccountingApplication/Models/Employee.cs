@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
+using System.Collections.ObjectModel;
 
 namespace LcAccountingApplication.Models
 {
@@ -60,10 +61,17 @@ namespace LcAccountingApplication.Models
             await EmployeesTable.DeleteAsync(employee);
         }
 
-        public static async Task<List<Employee>> EmployeeListing()
+        public static async Task<ObservableCollection<Employee>> EmployeeListing()
         {
-            List<Employee> listing = await EmployeesTable.ToListAsync();
-            return listing;
+            try
+            {
+                var listing = new ObservableCollection<Employee>(await EmployeesTable.ToListAsync());
+                return listing;
+            }
+            catch (MobileServiceInvalidOperationException e)
+            {
+                return null;
+            }
         }
 
         //For initializing values with a new employee
