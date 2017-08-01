@@ -7,6 +7,7 @@ using Microsoft.WindowsAzure.MobileServices;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using Windows.UI.Xaml.Data;
+using LcAccountingApplication.Helpers;
 
 namespace LcAccountingApplication.Models
 {
@@ -122,6 +123,19 @@ namespace LcAccountingApplication.Models
             if (Notes == null) Notes = "";
             if (DateOfBirth == null) DateOfBirth = new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
             if (DateTermination == null) DateTermination = DateTimeOffset.Now;
+        }
+    }
+
+    public class ObservableCollectionToObjectConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return (object)value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return (ObservableCollection<Employee>)value;
         }
     }
 

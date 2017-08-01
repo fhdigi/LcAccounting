@@ -4,6 +4,8 @@ using LcAccountingApplication.Models.PopupControls;
 using LcAccountingApplication.ViewModels;
 using LcAccountingApplication.Views.PopupControls;
 using Windows.UI.Xaml.Controls;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 namespace LcAccountingApplication.Views
 {
@@ -36,6 +38,7 @@ namespace LcAccountingApplication.Views
                 RemoveEmployeeCommand = new RelayCommand(async () =>
                 {
                     if (ViewModel.IsEmployeeSelected) await Employee.DeleteEmployee(ViewModel.SelectedEmployee);
+
                 }),
                 CancelCommand = new RelayCommand(() =>
                 {

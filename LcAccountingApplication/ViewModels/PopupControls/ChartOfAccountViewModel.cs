@@ -80,7 +80,6 @@ namespace LcAccountingApplication.ViewModels.PopupControls
         private async void DeleteSelectedAccount()
         {
             await ChartOfAccount.DeleteChartOfAccount(SelectedAccountListing);
-            SortAccountListings();
         }
         public void SortAccountListings()
         {
@@ -89,7 +88,7 @@ namespace LcAccountingApplication.ViewModels.PopupControls
             ChartOfAccountListing = new ObservableCollection<ChartOfAccount>(sortedList);
             Task.Run(ChartOfAccount.ChartOfAccountListing).Wait();
         }
-        private async Task SetAccountListing()
+        public async Task SetAccountListing()
         {
             ChartOfAccountListing = await ChartOfAccount.ChartOfAccountListing();
         }

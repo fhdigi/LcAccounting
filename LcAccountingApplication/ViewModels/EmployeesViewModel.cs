@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using LcAccountingApplication.Models;
 using System.Windows.Input;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Data;
 
 namespace LcAccountingApplication.ViewModels
 {
