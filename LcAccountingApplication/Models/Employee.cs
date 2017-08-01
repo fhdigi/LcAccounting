@@ -102,18 +102,27 @@ namespace LcAccountingApplication.Models
             DateOfBirth = new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
             DateTermination = DateTimeOffset.Now;
         }
-    }
-    //public class ObjectToEmployeeConverter : IValueConverter
-    //{
-    //    public object Convert(object value, Type targetType, object parameter, string language)
-    //    {
-    //        return value as Employee; //No data
-    //    }
 
-    //    public object ConvertBack(object value, Type targetType, object parameter, string language)
-    //    {
-    //        return value as object; //Data loss
-    //    }
-    //}
+        public void CorrectNullValues()
+        {
+            if (FirstName == null) FirstName = "";
+            if (LastName == null) LastName = "";
+            if (MiddleInitial == null) MiddleInitial = "";
+            if (Address == null) Address = "";
+            if (City == null) City = "";
+            if (State == null) State = "";
+            if (ZipCode == null) ZipCode = "";
+            if (PhoneNumber == null) PhoneNumber = "";
+            if (SocialSecurityNumber == null) SocialSecurityNumber = "";
+            if (DateHired == null) DateHired = DateTimeOffset.Now;
+            if (PayType == null) PayType = "";
+            if (EmergencyContact == null) EmergencyContact = "";
+            if (EmergencyRelationship == null) EmergencyRelationship = "";
+            if (EmergencyPhone == null) EmergencyPhone = "";
+            if (Notes == null) Notes = "";
+            if (DateOfBirth == null) DateOfBirth = new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
+            if (DateTermination == null) DateTermination = DateTimeOffset.Now;
+        }
+    }
 
 }

@@ -34,6 +34,8 @@ namespace LcAccountingApplication.Views.PopupControls
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ViewModel = (EmployeesViewModel)e.Parameter;
+
+            ViewModel.NewEmployeeBuffer.CorrectNullValues();
             DataContext = ViewModel;
         }
     }

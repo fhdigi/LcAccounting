@@ -13,8 +13,15 @@ namespace LcAccountingApplication.ViewModels
     public class EmployeesViewModel
     {
         public ObservableCollection<Employee> EmployeeListing { get; set; }
+        public int SelectedEmployeeIndex { get; set; }
+        public Employee SelectedEmployee
+        {
+            get
+            {
+                return EmployeeListing[SelectedEmployeeIndex];
+            }
 
-        public Employee SelectedEmployee { get; set; } //NOT currently responding to change in selected item
+        }
 
         public bool IsNewEmployee; //True if creating a chart of account. False is editing one.
         public Employee NewEmployeeBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
