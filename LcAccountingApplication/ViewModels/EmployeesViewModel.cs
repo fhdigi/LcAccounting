@@ -44,7 +44,7 @@ namespace LcAccountingApplication.ViewModels
         {
             Task.Run(SetEmployeeListing).Wait();
         }
-        private async Task SetEmployeeListing()
+        public async Task SetEmployeeListing()
         {
             EmployeeListing = await Employee.EmployeeListing();
         }

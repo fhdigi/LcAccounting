@@ -18,7 +18,7 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "LastName")] public string LastName { get; set; }
         [JsonProperty(PropertyName = "FirstName")] public string FirstName { get; set; }
         [JsonProperty(PropertyName = "MiddleInitial")] public string MiddleInitial { get; set; }
-        [JsonProperty(PropertyName = "PinNumber")] public int PinNumber { get; set; }
+        [JsonProperty(PropertyName = "PinNumber")] public string PinNumber { get; set; }
         [JsonProperty(PropertyName = "IsAdmin")] public bool IsAdmin { get; set; }
         [JsonProperty(PropertyName = "Address")] public string Address { get; set; }
         [JsonProperty(PropertyName = "City")] public string City { get; set; }
@@ -28,7 +28,7 @@ namespace LcAccountingApplication.Models
         [JsonProperty(PropertyName = "SocialSecurityNumber")] public string SocialSecurityNumber { get; set; }
         [JsonProperty(PropertyName = "DateHired")] public DateTimeOffset DateHired { get; set; }
         [JsonProperty(PropertyName = "PayType")] public string PayType { get; set; }
-        [JsonProperty(PropertyName = "PayRate")] public double PayRate { get; set; }
+        [JsonProperty(PropertyName = "PayRate")] public decimal PayRate { get; set; }
         [JsonProperty(PropertyName = "AdditionalPay")] public double AdditionalPay { get; set; }
         [JsonProperty(PropertyName = "EmergeencyContact")] public string EmergencyContact { get; set; }
         [JsonProperty(PropertyName = "EmergencyRelationship")] public string EmergencyRelationship { get; set; }
@@ -44,7 +44,18 @@ namespace LcAccountingApplication.Models
         {
             get { return LastName + ", " + FirstName; }
         }
-
+        public string HomeAddress
+        {
+            get { return Address + "\n" + City + ", " + State + " " + ZipCode; }
+        }
+        public string Pay
+        {
+            get
+            {
+                if (PayType == "Hourly") return "$" + PayRate.ToString("C2") + "/hr";
+                else return "$" + PayRate.ToString("C2");
+            }
+        }
 
         private static readonly IMobileServiceTable<Employee> EmployeesTable = App.MobileService.GetTable<Employee>();
 
@@ -92,7 +103,7 @@ namespace LcAccountingApplication.Models
             SocialSecurityNumber = "";
             DateHired = DateTimeOffset.Now;
             PayType = "";
-            PayRate = 10.40;
+            PayRate = 10.40M;
             AdditionalPay = 0.00;
             EmergencyContact = "";
             EmergencyRelationship = "";

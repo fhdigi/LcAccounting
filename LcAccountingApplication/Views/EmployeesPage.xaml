@@ -10,7 +10,7 @@
     <Page.Resources>
         <models:ObservableCollectionToObjectConverter x:Key="ObservableCollectionToObjectConverter"/>
     </Page.Resources>
-    
+
     <Grid
         x:Name="ContentArea"
         Margin="{StaticResource MediumLeftRightMargin}">
@@ -34,12 +34,44 @@
                 <ListView x:Name="employeesList" ItemsSource="{x:Bind ViewModel.EmployeeListing, Mode=OneWay}" SelectedIndex="{x:Bind ViewModel.SelectedEmployeeIndex, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="models:Employee">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind DisplayName, Mode=OneWay}">
-                                </TextBlock>
+                            <Grid RightTapped="Grid_RightTapped">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind DisplayName, Mode=OneWay}"/>
+                                </Grid>
+                                <FlyoutBase.AttachedFlyout>
+                                    <Flyout>
+                                        <Grid Height="auto" Width="200">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                                <RowDefinition Height="auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind DisplayName}" Margin="8"/>
+                                            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="" Margin="8" FontWeight="SemiBold"/>
+                                            <!-- Positon?-->
+                                            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind Pay}" Margin="8" FontWeight="SemiBold"/>
+                                            <!--Hourly Rate assumed-->
+                                            <TextBlock x:Uid="Employee_HomeAddress" Grid.Row="2" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="8" FontWeight="SemiBold"/>
+                                            <TextBlock x:Uid="Employee_PhoneNumber" Grid.Row="3" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="8" FontWeight="SemiBold"/>
+                                            <!--<TextBlock x:Uid="Employee_Email" Grid.Row="4" Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Margin="8" FontWeight="SemiBold"/>-->
+
+                                            <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind Address}" Margin="8"/>
+                                            <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind PhoneNumber}" Margin="8"/>
+                                            <!--<TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind EmailAddress}" Margin="8"/>-->
+                                            <TextBlock Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind Notes}" Margin="8"/>
+                                        </Grid>
+                                    </Flyout>
+                                </FlyoutBase.AttachedFlyout>
                             </Grid>
                         </DataTemplate>
                     </ListView.ItemTemplate>

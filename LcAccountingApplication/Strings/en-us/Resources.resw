@@ -531,4 +531,13 @@
   <data name="Employees_Remove.Content" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="Employee_Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="Employee_HomeAddress.Text" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="Employee_PhoneNumber.Text" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
 </root>

@@ -6,6 +6,8 @@ using LcAccountingApplication.Views.PopupControls;
 using Windows.UI.Xaml.Controls;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml;
 
 namespace LcAccountingApplication.Views
 {
@@ -27,7 +29,6 @@ namespace LcAccountingApplication.Views
                     ViewModel.IsNewEmployee = false;
                     ViewModel.NewEmployeeBuffer = ViewModel.SelectedEmployee;
                     Frame.Navigate(typeof(EmployeeDataPage), this.ViewModel);
-
                 }),
                 SaveEditedEmployeeCommand = new RelayCommand(async () =>
                 {
@@ -37,18 +38,21 @@ namespace LcAccountingApplication.Views
                 }),
                 RemoveEmployeeCommand = new RelayCommand(async () =>
                 {
-                    if (ViewModel.IsEmployeeSelected) await Employee.DeleteEmployee(ViewModel.SelectedEmployee);
-
+                    if (ViewModel.IsEmployeeSelected) await Employee.DeleteEmployee(ViewModel.SelectedEmployee); ViewModel.EmployeeListing.Remove(ViewModel.SelectedEmployee);
                 }),
                 CancelCommand = new RelayCommand(() =>
                 {
                     Frame.GoBack();
                 })
-                
             };
 
             DataContext = ViewModel;
             InitializeComponent();
+        }
+
+        private void Grid_RightTapped(object sender, Windows.UI.Xaml.Input.RightTappedRoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout(sender as FrameworkElement);
         }
     }
 }
