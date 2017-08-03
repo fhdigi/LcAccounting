@@ -25,7 +25,7 @@
         <TextBlock x:Uid="PayBills_Title" Style="{StaticResource HeaderTextBlockStyle}" Margin="8"/>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
             <TextBlock x:Uid="PayBills_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <!--<ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center" ItemsSource="{x:Bind ViewModel.Vendors}"/>-->
+            <ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center" ItemsSource="{x:Bind ViewModel.SuppliersListing}"/>
         </StackPanel>
         <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
         <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.BillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedItem="{Binding ViewModel.SelectedBillsListing, Mode=TwoWay}">

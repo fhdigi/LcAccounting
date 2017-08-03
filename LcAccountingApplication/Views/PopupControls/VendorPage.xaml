@@ -20,7 +20,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_CompanyName" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.SupplierName}"/>
             </Grid>
 
             <Grid>
@@ -35,8 +35,8 @@
                 <TextBlock x:Uid="Vendor_AccountID" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_Terms" Grid.Row="0" Grid.Column="1"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.AccountNumber}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Terms}"/>
             </Grid>
 
             <Grid>
@@ -51,8 +51,8 @@
                 <TextBlock x:Uid="Vendor_Address" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_City" Grid.Row="0" Grid.Column="1"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Address}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.City}"/>
             </Grid>
 
             <Grid>
@@ -67,8 +67,8 @@
                 <TextBlock x:Uid="Vendor_State" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_ZipCode" Grid.Row="0" Grid.Column="1"/>
 
-                <ComboBox Grid.Row="1" Grid.Column="0" Margin="8"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.State}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.ZipCode}"/>
             </Grid>
 
             <Grid>
@@ -81,7 +81,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_PhoneNumber" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Phone}"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -93,7 +93,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_Fax" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Fax}"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -103,9 +103,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock x:Uid="Vendor_PhoneEmail" Grid.Row="0" Grid.Column="0"/>
+                <TextBlock x:Uid="Vendor_Email" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Email}"/>
             </Grid>
 
             <Grid>
@@ -114,8 +114,8 @@
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Row="1" Grid.Column="0" Margin="8" HorizontalAlignment="Center" x:Uid="Vendor_Save"/>
-                <Button Grid.Row="1" Grid.Column="1" Margin="8" HorizontalAlignment="Center" x:Uid="Vendor_Cancel"/>
+                <Button Grid.Row="1" Grid.Column="0" Command="{x:Bind ViewModel.SaveNewSupplierCommand}"  Margin="8" HorizontalAlignment="Center" x:Uid="Vendor_Save"/>
+                <Button Grid.Row="1" Grid.Column="1" Command="{x:Bind ViewModel.CancelCommand}" Margin="8" HorizontalAlignment="Center" x:Uid="Vendor_Cancel"/>
             </Grid>
         </StackPanel>
     </Grid>

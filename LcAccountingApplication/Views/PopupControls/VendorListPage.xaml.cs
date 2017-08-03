@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LcAccountingApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,18 @@ namespace LcAccountingApplication.Views.PopupControls
     /// </summary>
     public sealed partial class VendorListPage : Page
     {
+        public PayablesViewModel ViewModel;
+
+
         public VendorListPage()
         {
             this.InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            ViewModel = (PayablesViewModel)e.Parameter;
+            DataContext = ViewModel;
         }
     }
 }

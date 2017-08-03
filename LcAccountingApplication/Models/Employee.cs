@@ -93,7 +93,7 @@ namespace LcAccountingApplication.Models
             LastName = "";
             FirstName = "";
             MiddleInitial = "";
-            PinNumber = 0;
+            PinNumber = "";
             IsAdmin = false;
             Address = "";
             City = "";

@@ -17,7 +17,6 @@ namespace LcAccountingApplication.ViewModels
 {
     public class PayablesViewModel : Observable
     {
-        //PROPERTIES
         public ObservableCollection<Bills> BillsListing { get; set; }
         public Bills SelectedBillsListing { get; set; }
 
@@ -36,6 +35,28 @@ namespace LcAccountingApplication.ViewModels
         public ICommand SaveAndCloseCommand;
         public ICommand CancelCommand;
 
+        public ICommand NewSupplierCommand;
+        public ICommand RemoveSupplierCommand;
+        public ICommand SaveNewSupplierCommand;
+
+        public ObservableCollection<Suppliers> SuppliersListing { get; set; }
+
+        private Suppliers _SelectedSupplier;
+        public Suppliers SelectedSupplier
+        {
+            get
+            {
+                if (SelectedSupplierIndex != -1) return SuppliersListing[SelectedSupplierIndex];
+                else return null;
+            }
+            set
+            {
+                _SelectedSupplier = value;
+            }
+        }
+        public int SelectedSupplierIndex { get; set; } = -1;
+        public Suppliers NewSupplierBuffer { get; set; }
+
         public Type CurrentSourcePageType = null;
 
         public PayablesViewModel()
@@ -43,6 +64,9 @@ namespace LcAccountingApplication.ViewModels
             Task.Run(SetBillsListing).Wait();
             SortBillsListing();
             NewBillsBuffer = new Bills();
+
+            Task.Run(SetSuppliers).Wait();
+            NewSupplierBuffer = new Suppliers();
         }
         public void SortBillsListing()
         {
@@ -62,6 +86,18 @@ namespace LcAccountingApplication.ViewModels
                 BillsListing = new ObservableCollection<Bills>();
             }
 
+        }
+
+        public async Task SetSuppliers()
+        {
+            try
+            {
+                SuppliersListing = new ObservableCollection<Suppliers>(await Suppliers.SuppliersListing());
+            }
+            catch(Exception e)
+            {
+                SuppliersListing = new ObservableCollection<Suppliers>();
+            }
         }
     }
 }

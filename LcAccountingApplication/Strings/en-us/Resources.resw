@@ -474,13 +474,13 @@
   <data name="VendorList_SelectVendor.Text" xml:space="preserve">
     <value>Please Select a Vendor to Edit</value>
   </data>
-  <data name="Vendor_AccountNumber.Text" xml:space="preserve">
+  <data name="Vendor_AccountID.Text" xml:space="preserve">
     <value>AccountID</value>
   </data>
-  <data name="Vendor_Address" xml:space="preserve">
+  <data name="Vendor_Address.Text" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="Vendor_Cancel.Text" xml:space="preserve">
+  <data name="Vendor_Cancel.Content" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="Vendor_City.Text" xml:space="preserve">
@@ -498,7 +498,7 @@
   <data name="Vendor_PhoneNumber.Text" xml:space="preserve">
     <value>Phone Number</value>
   </data>
-  <data name="Vendor_Save.Text" xml:space="preserve">
+  <data name="Vendor_Save.Content" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="Vendor_State.Text" xml:space="preserve">
@@ -539,5 +539,11 @@
   </data>
   <data name="Employee_PhoneNumber.Text" xml:space="preserve">
     <value>Phone:</value>
+  </data>
+  <data name="VendorList_New.Content" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="VendorList_Remove.Content" xml:space="preserve">
+    <value>Remove</value>
   </data>
 </root>

@@ -1,6 +1,8 @@
 using LcAccountingApplication.Helpers;
+using LcAccountingApplication.Models;
 using LcAccountingApplication.ViewModels;
 using LcAccountingApplication.Views.PopupControls;
+using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
 namespace LcAccountingApplication.Views
@@ -30,8 +32,23 @@ namespace LcAccountingApplication.Views
                 {
                     ViewModel.NewBillsBuffer = null;
                     Frame.GoBack();
+                }),
+                NewSupplierCommand = new RelayCommand(() =>
+                {
+                    ViewModel.NewSupplierBuffer = new Suppliers();
+                    Frame.Navigate(typeof(VendorPage), this.ViewModel);
+                }),
+                RemoveSupplierCommand = new RelayCommand(() =>
+                {
+                    Task.Run(() => Suppliers.DeleteSuppliers(ViewModel.SelectedSupplier)).Wait();
+                    Task.Run(ViewModel.SetSuppliers).Wait();
+                }),
+                SaveNewSupplierCommand = new RelayCommand(() =>
+                {
+                    Task.Run(() => Suppliers.InsertSuppliers(ViewModel.NewSupplierBuffer));
+                    Task.Run(ViewModel.SetSuppliers);
+                    Frame.GoBack();
                 })
-
             };
             InitializeComponent();
         }

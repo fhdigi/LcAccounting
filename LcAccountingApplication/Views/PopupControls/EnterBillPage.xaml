@@ -24,7 +24,7 @@
         </Grid.Resources>
         <TextBlock x:Uid="EnterBill_Title" Style="{StaticResource HeaderTextBlockStyle}" Margin="8"/>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
-            <!--<ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Null}" SelectedIndex="{x:Bind ViewModel.SelectedBillsListingIndex}" Margin="8,0" VerticalAlignment="Center"/>-->
+            <ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex}" Margin="8,0" VerticalAlignment="Center"/>
             <Button Command="{x:Bind ViewModel.NavigateToAddVendorPageCommand}" Margin="8,0" x:Uid="EnterBill_AddVendor"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Margin="0,8" HorizontalAlignment="Left">
