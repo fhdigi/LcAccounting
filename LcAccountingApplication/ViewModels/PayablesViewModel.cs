@@ -39,10 +39,10 @@ namespace LcAccountingApplication.ViewModels
         public ICommand RemoveSupplierCommand;
         public ICommand SaveNewSupplierCommand;
 
-        public ObservableCollection<Suppliers> SuppliersListing { get; set; }
+        public ObservableCollection<Supplier> SuppliersListing { get; set; }
 
-        private Suppliers _SelectedSupplier;
-        public Suppliers SelectedSupplier
+        private Supplier _SelectedSupplier;
+        public Supplier SelectedSupplier
         {
             get
             {
@@ -55,7 +55,7 @@ namespace LcAccountingApplication.ViewModels
             }
         }
         public int SelectedSupplierIndex { get; set; } = -1;
-        public Suppliers NewSupplierBuffer { get; set; }
+        public Supplier NewSupplierBuffer { get; set; }
 
         public Type CurrentSourcePageType = null;
 
@@ -66,7 +66,7 @@ namespace LcAccountingApplication.ViewModels
             NewBillsBuffer = new Bills();
 
             Task.Run(SetSuppliers).Wait();
-            NewSupplierBuffer = new Suppliers();
+            NewSupplierBuffer = new Supplier();
         }
         public void SortBillsListing()
         {
@@ -92,11 +92,11 @@ namespace LcAccountingApplication.ViewModels
         {
             try
             {
-                SuppliersListing = new ObservableCollection<Suppliers>(await Suppliers.SuppliersListing());
+                SuppliersListing = new ObservableCollection<Supplier>(await Supplier.SuppliersListing());
             }
             catch(Exception e)
             {
-                SuppliersListing = new ObservableCollection<Suppliers>();
+                SuppliersListing = new ObservableCollection<Supplier>();
             }
         }
     }

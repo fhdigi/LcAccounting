@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace LcAccountingApplication.Models
 {
-    public class Suppliers
+    public class Supplier
     {
         public string Id { get; set; }
 
@@ -42,22 +42,22 @@ namespace LcAccountingApplication.Models
         [JsonProperty (PropertyName="Email")]
         public string Email { get; set; }
 
-        private static readonly IMobileServiceTable<Suppliers> SuppliersTable = App.MobileService.GetTable<Suppliers>();
+        private static readonly IMobileServiceTable<Supplier> SuppliersTable = App.MobileService.GetTable<Supplier>();
 
-        public static async Task InsertSuppliers(Suppliers SuppliersItem)
+        public static async Task InsertSuppliers(Supplier SuppliersItem)
         {
             await SuppliersTable.InsertAsync(SuppliersItem);
         }
-        public static async Task UpdateSuppliers (Suppliers SuppliersItem)
+        public static async Task UpdateSuppliers (Supplier SuppliersItem)
         {
             await SuppliersTable.UpdateAsync(SuppliersItem);
         }
-        public static async Task DeleteSuppliers(Suppliers SuppliersItem)
+        public static async Task DeleteSuppliers(Supplier SuppliersItem)
         {
             await SuppliersTable.DeleteAsync(SuppliersItem);
 
         }
-        public static async Task<List<Suppliers>> SuppliersListing()
+        public static async Task<List<Supplier>> SuppliersListing()
         {
        
             try
@@ -74,7 +74,7 @@ namespace LcAccountingApplication.Models
 
         }
 
-        public Suppliers()
+        public Supplier()
         {
             SupplierName = "";
             AccountNumber = "";

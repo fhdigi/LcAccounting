@@ -35,18 +35,18 @@ namespace LcAccountingApplication.Views
                 }),
                 NewSupplierCommand = new RelayCommand(() =>
                 {
-                    ViewModel.NewSupplierBuffer = new Suppliers();
+                    ViewModel.NewSupplierBuffer = new Supplier();
                     Frame.Navigate(typeof(VendorPage), this.ViewModel);
                 }),
                 RemoveSupplierCommand = new RelayCommand(() =>
                 {
-                    Task.Run(() => Suppliers.DeleteSuppliers(ViewModel.SelectedSupplier)).Wait();
+                    Task.Run(() => Supplier.DeleteSuppliers(ViewModel.SelectedSupplier)).Wait();
                     Task.Run(ViewModel.SetSuppliers).Wait();
                 }),
                 SaveNewSupplierCommand = new RelayCommand(() =>
                 {
                     ViewModel.NewSupplierBuffer.CorrectNullValues();
-                    Task.Run(() => Suppliers.InsertSuppliers(ViewModel.NewSupplierBuffer));
+                    Task.Run(() => Supplier.InsertSuppliers(ViewModel.NewSupplierBuffer));
                     Task.Run(ViewModel.SetSuppliers);
                     Frame.GoBack();
                 })

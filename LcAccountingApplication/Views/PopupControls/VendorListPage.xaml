@@ -14,7 +14,7 @@
             <TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Uid="VendorList_SelectVendor"/>
             <ListView HorizontalAlignment="Center" Grid.Row="1" Height="256" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex}">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Suppliers">
+                    <DataTemplate x:DataType="models:Supplier">
                         <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind SupplierName}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
