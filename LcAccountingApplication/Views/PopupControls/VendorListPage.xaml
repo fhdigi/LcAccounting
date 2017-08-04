@@ -10,30 +10,37 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Grid.Row="0" x:Uid="VendorList_Title" Style="{StaticResource HeaderTextBlockStyle}" VerticalAlignment="Top"/>
-        <StackPanel Width="384" Margin="0,64,0,0">
-            <TextBlock Style="{StaticResource BodyTextBlockStyle}" x:Uid="VendorList_SelectVendor"/>
-            <ListView HorizontalAlignment="Center" Grid.Row="1" Height="256" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Supplier">
-                        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind SupplierName}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsWrapGrid Orientation="Vertical"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-            </ListView>
-            <Grid>
+        <Grid  Width="384" Margin="0,64,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="VendorList_SelectVendor"/>
+            <ScrollViewer Grid.Row="1">
+                <ListView ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex, Mode=TwoWay}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Supplier">
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind SupplierName}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
+            </ScrollViewer>
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Command="{x:Bind ViewModel.NewSupplierCommand}" x:Uid="VendorList_New" Grid.Column="0" Margin="8" HorizontalAlignment="Center"/>
-                <Button Command="{x:Bind ViewModel.RemoveSupplierCommand}" x:Uid="VendorList_Remove" IsEnabled="{x:Bind ViewModel.IsAccountListingSelected}" Grid.Column="1" Margin="8" HorizontalAlignment="Center"/>
+                <Button Command="{x:Bind ViewModel.RemoveSupplierCommand}" x:Uid="VendorList_Remove" IsEnabled="{x:Bind ViewModel.IsVedorListingSelected}" Grid.Column="1" Margin="8" HorizontalAlignment="Center"/>
                 <Button Command="{x:Bind ViewModel.CancelCommand}" x:Uid="VendorList_Cancel" Grid.Column="2" Margin="8" HorizontalAlignment="Center"/>
             </Grid>
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>

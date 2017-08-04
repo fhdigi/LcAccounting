@@ -49,6 +49,11 @@ namespace LcAccountingApplication.Models.PopupControls
                 return null;
             }
         }
+
+        public override string ToString()
+        {
+            return AccountName;
+        }
     }
     public enum AccountTypes
     {
@@ -58,4 +63,5 @@ namespace LcAccountingApplication.Models.PopupControls
         Income = 3,
         Expense = 4
     }
+
 }

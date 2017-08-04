@@ -19,25 +19,20 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.Resources>
-            <converters:DateTimeConverter x:Key="DateConverter"/>
-        </Grid.Resources>
         <TextBlock x:Uid="EnterBill_Title" Style="{StaticResource HeaderTextBlockStyle}" Margin="8"/>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
-            <ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex}" Margin="8,0" VerticalAlignment="Center"/>
+            <ComboBox x:Uid="EnterBill_Vendor" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex, Mode=TwoWay}" Margin="8,0" VerticalAlignment="Center"/>
             <Button Command="{x:Bind ViewModel.NavigateToAddVendorPageCommand}" Margin="8,0" x:Uid="EnterBill_AddVendor"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Margin="0,8" HorizontalAlignment="Left">
-            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.Amount}" Margin="8" x:Uid="EnterBill_Amount" VerticalAlignment="Center"/>
-            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.InvNumber}" Margin="8" x:Uid="EnterBill_InvoiceID" VerticalAlignment="Center"/>
-            <!--
-            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.Received, Converter={StaticResource DateConverter}, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateRecieved" VerticalAlignment="Center"/>
-            <DatePicker Margin="8" x:Uid="EnterBill_DateDue" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateDue, Converter={StaticResource DateConverter}, Mode=TwoWay}"/>
-            <DatePicker Margin="8" x:Uid="EnterBill_AnticipatedPayDate" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateAnticipated, Converter={StaticResource DateConverter}, Mode=TwoWay}"/>
-            -->
+            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.Amount, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_Amount" VerticalAlignment="Center"/>
+            <TextBox Text="{x:Bind ViewModel.NewBillsBuffer.InvNumber, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_InvoiceID" VerticalAlignment="Center"/>
+            <DatePicker Date="{x:Bind ViewModel.NewBillsBuffer.Received, Mode=TwoWay}" Margin="8" x:Uid="EnterBill_DateReceived" VerticalAlignment="Center"/>
+            <DatePicker Margin="8" x:Uid="EnterBill_DateDue" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateDue, Mode=TwoWay}"/>
+            <DatePicker Margin="8" x:Uid="EnterBill_AnticipatedPayDate" VerticalAlignment="Center" Date="{x:Bind ViewModel.NewBillsBuffer.DateAnticipated, Mode=TwoWay}"/>
         </StackPanel>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Left">
-            <ComboBox x:Uid="EnterBill_ChartOfAccount" Margin="8,0" VerticalAlignment="Center"/>
+            <ComboBox x:Uid="EnterBill_ChartOfAccount" Margin="8,0" VerticalAlignment="Center"  ItemsSource="{x:Bind ViewModel.ChartOfAccountListing}" SelectedIndex="{x:Bind ViewModel.SelectedChartOfAccountIndex, Mode=TwoWay}"/>
             <Button Command="{x:Bind ViewModel.NavigateToAddAccountPageCommand}" Margin="8,0" x:Uid="EnterBill_AddAccount"/>
         </StackPanel>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Left">

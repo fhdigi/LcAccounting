@@ -20,10 +20,10 @@ namespace LcAccountingApplication.Models
         public double Amount { get; set; }
 
         [JsonProperty(PropertyName = "Received")]
-        public DateTime Received { get; set; }
+        public DateTimeOffset Received { get; set; }
 
         [JsonProperty(PropertyName = "DateDue")]
-        public DateTime DateDue { get; set; }
+        public DateTimeOffset DateDue { get; set; }
 
         [JsonProperty(PropertyName = "AccountId")]
         public string AccountId { get; set; }
@@ -35,7 +35,7 @@ namespace LcAccountingApplication.Models
         public string LedgerLink { get; set; }
 
         [JsonProperty(PropertyName = "DateAnticipated")]
-        public DateTime DateAnticipated { get; set; }
+        public DateTimeOffset DateAnticipated { get; set; }
 
         private static readonly IMobileServiceTable<Bills> BillsTable = App.MobileService.GetTable<Bills>();
         public static async Task InsertBills(Bills BillsItem)

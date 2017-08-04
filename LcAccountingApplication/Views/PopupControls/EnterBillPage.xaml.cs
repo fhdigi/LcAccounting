@@ -26,20 +26,5 @@ namespace LcAccountingApplication.Views.PopupControls
             DataContext = ViewModel;
         }
     }
-    //For binding the DateTimeOffset value to the DateTime database value
-    public class DateTimeConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
-        }
-
-
-    }
 
 }

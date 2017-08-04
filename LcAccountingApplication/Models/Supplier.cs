@@ -99,5 +99,10 @@ namespace LcAccountingApplication.Models
             if (Fax == null) Fax = "";
             if (Email == null) Email = "";
         }
+
+        public override string ToString()
+        {
+            return SupplierName;
+        }
     }
 }

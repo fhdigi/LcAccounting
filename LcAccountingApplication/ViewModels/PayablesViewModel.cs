@@ -19,13 +19,21 @@ namespace LcAccountingApplication.ViewModels
     {
         public ObservableCollection<Bills> BillsListing { get; set; }
         public Bills SelectedBillsListing { get; set; }
+        public Type CurrentSourcePageType = null;
 
         public Bills NewBillsBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
-        public bool IsAccountListingSelected
+        public bool IsBillListingSelected
         {
             get
             {
                 return SelectedBillsListing != null;
+            }
+        }
+        public bool IsVedorListingSelected
+        {
+            get
+            {
+                return SelectedSupplier != null;
             }
         }
 
@@ -52,13 +60,44 @@ namespace LcAccountingApplication.ViewModels
             set
             {
                 _SelectedSupplier = value;
+                NewBillsBuffer.VendorId = _SelectedSupplier.AccountNumber;
             }
         }
-        public int SelectedSupplierIndex { get; set; } = -1;
+
+        public int SelectedSupplierIndex { get; set; }
         public Supplier NewSupplierBuffer { get; set; }
 
-        public Type CurrentSourcePageType = null;
 
+
+        public ObservableCollection<ChartOfAccount> ChartOfAccountListing {
+            get
+            {
+                return Task.Run(ChartOfAccount.ChartOfAccountListing).GetAwaiter().GetResult();
+            }
+        }
+
+        private ChartOfAccount _SelectedChartOfAccount;
+        public ChartOfAccount SelectedChartOfAccount
+        {
+            get
+            {
+                if (SelectedChartOfAccountIndex != -1) return ChartOfAccountListing[SelectedChartOfAccountIndex];
+                else return null;
+            }
+            set
+            {
+                _SelectedChartOfAccount = value;
+                NewBillsBuffer.AccountId = new Guid(_SelectedChartOfAccount.Id).ToString();
+            }
+        }
+
+        public int SelectedChartOfAccountIndex { get; set; }
+        public ChartOfAccount NewChartOfAccountBuffer { get; set; }
+
+
+
+
+        //FUNCTIONS
         public PayablesViewModel()
         {
             Task.Run(SetBillsListing).Wait();
