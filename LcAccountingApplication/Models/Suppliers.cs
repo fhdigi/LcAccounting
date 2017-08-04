@@ -73,5 +73,31 @@ namespace LcAccountingApplication.Models
 
 
         }
+
+        public Suppliers()
+        {
+            SupplierName = "";
+            AccountNumber = "";
+            Terms = 0;
+            Address = "";
+            City = "";
+            State = "";
+            ZipCode = "";
+            Phone = "";
+            Fax = "";
+            Email = "";
+        }
+        public void CorrectNullValues()
+        {
+            if (SupplierName == null) SupplierName = "";
+            if (AccountNumber == null) AccountNumber = "";
+            if (Address == null) Address = "";
+            if (City == null) City = "";
+            if (State == null) State = "";
+            if (ZipCode == null) ZipCode = "";
+            if (Phone == null) Phone = "";
+            if (Fax == null) Fax = "";
+            if (Email == null) Email = "";
+        }
     }
 }

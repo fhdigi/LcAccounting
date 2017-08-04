@@ -45,6 +45,7 @@ namespace LcAccountingApplication.Views
                 }),
                 SaveNewSupplierCommand = new RelayCommand(() =>
                 {
+                    ViewModel.NewSupplierBuffer.CorrectNullValues();
                     Task.Run(() => Suppliers.InsertSuppliers(ViewModel.NewSupplierBuffer));
                     Task.Run(ViewModel.SetSuppliers);
                     Frame.GoBack();

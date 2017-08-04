@@ -20,7 +20,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_CompanyName" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.SupplierName}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.SupplierName, Mode=TwoWay}"/>
             </Grid>
 
             <Grid>
@@ -35,8 +35,8 @@
                 <TextBlock x:Uid="Vendor_AccountID" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_Terms" Grid.Row="0" Grid.Column="1"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.AccountNumber}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Terms}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.AccountNumber, Mode=TwoWay}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Terms, Mode=TwoWay}"/>
             </Grid>
 
             <Grid>
@@ -51,8 +51,8 @@
                 <TextBlock x:Uid="Vendor_Address" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_City" Grid.Row="0" Grid.Column="1"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Address}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.City}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Address, Mode=TwoWay}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.City, Mode=TwoWay}"/>
             </Grid>
 
             <Grid>
@@ -67,8 +67,8 @@
                 <TextBlock x:Uid="Vendor_State" Grid.Row="0" Grid.Column="0"/>
                 <TextBlock x:Uid="Vendor_ZipCode" Grid.Row="0" Grid.Column="1"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.State}"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.ZipCode}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.State, Mode=TwoWay}"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.ZipCode, Mode=TwoWay}"/>
             </Grid>
 
             <Grid>
@@ -81,7 +81,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_PhoneNumber" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Phone}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Phone, Mode=TwoWay}"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -93,7 +93,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_Fax" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Fax}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Fax, Mode=TwoWay}"/>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -105,7 +105,7 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Uid="Vendor_Email" Grid.Row="0" Grid.Column="0"/>
 
-                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Email}"/>
+                <TextBox Grid.Row="1" Grid.Column="0" Margin="8" Text="{x:Bind ViewModel.NewSupplierBuffer.Email, Mode=TwoWay}"/>
             </Grid>
 
             <Grid>
