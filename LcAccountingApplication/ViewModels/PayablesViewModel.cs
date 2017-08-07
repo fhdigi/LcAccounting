@@ -18,7 +18,30 @@ namespace LcAccountingApplication.ViewModels
     public class PayablesViewModel : Observable
     {
         public ObservableCollection<Bills> BillsListing { get; set; }
-        public Bills SelectedBillsListing { get; set; }
+        public ObservableCollection<Bills> SpecificBillsListing
+        {
+            get
+            {
+                //ObservableCollection<Bills> filteredBillsListing = new ObservableCollection<Bills>();
+
+                //foreach (Bills b in BillsListing)
+                //{
+                //    if (b.VendorId == SelectedSupplier.Id) filteredBillsListing.Add(b);
+                //}
+                //return filteredBillsListing;
+
+                return BillsListing;
+            }
+        }
+        public int SelectedBillsListingIndex { get; set; }
+        public Bills SelectedBillsListing
+        {
+            get
+            {
+                if (SelectedBillsListingIndex > 0 && BillsListing.Count > 0) return BillsListing[SelectedBillsListingIndex];
+                else return null;
+            }
+        }
         public Type CurrentSourcePageType = null;
 
         public Bills NewBillsBuffer; //Used when creating a new accont (Discarded if Cancel, Added if Save)
@@ -29,7 +52,7 @@ namespace LcAccountingApplication.ViewModels
                 return SelectedBillsListing != null;
             }
         }
-        public bool IsVedorListingSelected
+        public bool IsVendorListingSelected
         {
             get
             {
@@ -54,17 +77,25 @@ namespace LcAccountingApplication.ViewModels
         {
             get
             {
+                SortBillsListing();
                 if (SelectedSupplierIndex != -1) return SuppliersListing[SelectedSupplierIndex];
                 else return null;
             }
+        }
+        int _SelectedSupplierIndex;
+        public int SelectedSupplierIndex
+        {
+            get
+            {
+                return _SelectedSupplierIndex;
+            }
             set
             {
-                _SelectedSupplier = value;
-                NewBillsBuffer.VendorId = _SelectedSupplier.AccountNumber;
+                _SelectedSupplierIndex = value;
+                SortBillsListing();
             }
         }
 
-        public int SelectedSupplierIndex { get; set; }
         public Supplier NewSupplierBuffer { get; set; }
 
 
@@ -87,7 +118,7 @@ namespace LcAccountingApplication.ViewModels
             set
             {
                 _SelectedChartOfAccount = value;
-                NewBillsBuffer.AccountId = new Guid(_SelectedChartOfAccount.Id).ToString();
+                NewBillsBuffer.AccountId = _SelectedChartOfAccount.Id;
             }
         }
 
@@ -109,22 +140,29 @@ namespace LcAccountingApplication.ViewModels
         }
         public void SortBillsListing()
         {
-            //List<Bills> sortedList = BillsListing.ToList<Bills>();
-            //sortedList.Sort((x, y) => x.VendorID.CompareTo(y.VendorID));
-            //BillsListing = new ObservableCollection<Bills>(sortedList);
+            List<Bills> sortedList = BillsListing.ToList<Bills>();
+            sortedList.Sort((x, y) => x.VendorId.CompareTo(y.VendorId));
+            BillsListing = new ObservableCollection<Bills>(sortedList);
             Task.Run(Bills.BillsListing).Wait();
         }
-        private async Task SetBillsListing()
+        public void SortVendorsListing()
+        {
+            List<Supplier> sortedList = SuppliersListing.ToList<Supplier>();
+            sortedList.Sort((x, y) => x.SupplierName.CompareTo(y.SupplierName));
+            SuppliersListing = new ObservableCollection<Supplier>(sortedList);
+            Task.Run(Supplier.SuppliersListing).Wait();
+        }
+        public async Task SetBillsListing()
         {
             try
             {
                 BillsListing = new ObservableCollection<Bills>(await Bills.BillsListing());
+                SortBillsListing();
             }
             catch (Exception e)
             {
                 BillsListing = new ObservableCollection<Bills>();
             }
-
         }
 
         public async Task SetSuppliers()
@@ -132,6 +170,7 @@ namespace LcAccountingApplication.ViewModels
             try
             {
                 SuppliersListing = new ObservableCollection<Supplier>(await Supplier.SuppliersListing());
+                SortVendorsListing();
             }
             catch(Exception e)
             {

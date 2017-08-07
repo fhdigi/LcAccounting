@@ -10,6 +10,8 @@ namespace LcAccountingApplication.Models
 {
     public class Bills
     {
+        public string Id { get; set; }
+
         [JsonProperty(PropertyName = "VendorId")]
         public string VendorId { get; set; }
 
@@ -64,6 +66,19 @@ namespace LcAccountingApplication.Models
             {
                 return null;
             }
+        }
+
+        public Bills()
+        {
+            VendorId = "";
+            InvNumber = "";
+            Amount = 0.0;
+            Received = DateTimeOffset.Now;
+            DateDue = DateTimeOffset.Now;
+            AccountId = "";
+            PaymentsMade = false;
+            LedgerLink = "";
+            DateAnticipated = DateTimeOffset.Now;
         }
     }
 }

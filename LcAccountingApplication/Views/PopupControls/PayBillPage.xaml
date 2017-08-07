@@ -25,10 +25,10 @@
         <TextBlock x:Uid="PayBills_Title" Style="{StaticResource HeaderTextBlockStyle}" Margin="8"/>
         <StackPanel Margin="0,8" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left">
             <TextBlock x:Uid="PayBills_Vendor" Style="{StaticResource BodyTextBlockStyle}" VerticalAlignment="Center"/>
-            <ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center" ItemsSource="{x:Bind ViewModel.SuppliersListing}"/>
+            <ComboBox Margin="8,0" VerticalAlignment="Top" HorizontalAlignment="Center" ItemsSource="{x:Bind ViewModel.SuppliersListing}" SelectedIndex="{x:Bind ViewModel.SelectedSupplierIndex, Mode=TwoWay}"/>
         </StackPanel>
         <TextBlock x:Uid="PayBills_SelectBills" Grid.Row="2" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Left"/>
-        <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.BillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedItem="{Binding ViewModel.SelectedBillsListing, Mode=TwoWay}">
+        <ListView Grid.Row="3" Height="256" ItemsSource="{x:Bind ViewModel.SpecificBillsListing, Mode=OneWay}" HorizontalAlignment="Left" SelectedIndex="{Binding ViewModel.SelectedBillsListingIndex, Mode=TwoWay}" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}">
             <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -38,9 +38,9 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <!--Date Recorded, Date Due, and Amount-->
-                    <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateRecorded"/>
-                    <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_DateDue"/>
-                    <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" x:Uid="PayBills_Amount"/>
+                    <TextBlock Grid.Column="0" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.SelectedBillsListing.Received}" x:Uid="PayBills_DateRecorded"/>
+                    <TextBlock Grid.Column="1" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.SelectedBillsListing.DateDue}" x:Uid="PayBills_DateDue"/>
+                    <TextBlock Grid.Column="2" Style="{StaticResource BodyTextBlockStyle}" Text="{x:Bind ViewModel.SelectedBillsListing.Amount}" x:Uid="PayBills_Amount"/>
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
@@ -78,16 +78,16 @@
                 <ColumnDefinition Width="128"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox x:Uid="PayBills_AmountToPay" Text="" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox x:Uid="PayBills_CheckID" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox x:Uid="PayBills_Date" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8"/>
-            <TextBox x:Uid="PayBills_Memo" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3"/>
+            <TextBox x:Uid="PayBills_AmountToPay" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
+            <TextBox x:Uid="PayBills_CheckID" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
+            <TextBox x:Uid="PayBills_Date" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
+            <TextBox x:Uid="PayBills_Memo" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="8" Grid.ColumnSpan="3" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
 
-            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Margin="8" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <CheckBox x:Uid="PayBills_EnteredIntoCheckLedger" Margin="8" Grid.Row="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Left">
-            <Button x:Uid="PayBills_Pay" Margin="8"/>
-            <Button x:Uid="PayBills_Cancel" Margin="8"/>
+            <Button x:Uid="PayBills_Pay" Margin="8" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
+            <Button x:Uid="PayBills_Cancel" Margin="8" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}"/>
         </StackPanel>
     </Grid>
 </Page>

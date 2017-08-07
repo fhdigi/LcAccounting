@@ -22,9 +22,10 @@ namespace LcAccountingApplication.Views
                 {
                     //Frame.Navigate(typeof(AddAccountPage));
                 }),
-                SaveAndCloseCommand =new RelayCommand(() =>
+                SaveAndCloseCommand = new RelayCommand(() =>
                 {
-                    ViewModel.BillsListing.Add(ViewModel.NewBillsBuffer);
+                    Task.Run(() => Bills.InsertBills(ViewModel.NewBillsBuffer));
+                    Task.Run(ViewModel.SetBillsListing);
                     ViewModel.NewBillsBuffer = null;
                     Frame.GoBack();
                 }),

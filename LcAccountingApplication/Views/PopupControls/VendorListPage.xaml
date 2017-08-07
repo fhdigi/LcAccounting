@@ -38,7 +38,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Command="{x:Bind ViewModel.NewSupplierCommand}" x:Uid="VendorList_New" Grid.Column="0" Margin="8" HorizontalAlignment="Center"/>
-                <Button Command="{x:Bind ViewModel.RemoveSupplierCommand}" x:Uid="VendorList_Remove" IsEnabled="{x:Bind ViewModel.IsVedorListingSelected}" Grid.Column="1" Margin="8" HorizontalAlignment="Center"/>
+                <Button Command="{x:Bind ViewModel.RemoveSupplierCommand}" x:Uid="VendorList_Remove" IsEnabled="{x:Bind ViewModel.IsVendorListingSelected}" Grid.Column="1" Margin="8" HorizontalAlignment="Center"/>
                 <Button Command="{x:Bind ViewModel.CancelCommand}" x:Uid="VendorList_Cancel" Grid.Column="2" Margin="8" HorizontalAlignment="Center"/>
             </Grid>
         </Grid>
